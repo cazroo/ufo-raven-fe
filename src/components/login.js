@@ -1,18 +1,20 @@
 import { useState } from "react";
-import React from "react";
 
-function Register() {
-  const [user, setUser] = useState("");
+function Login() {
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const baseURL = "http://localhost:5000/user/registeruser";
+  const [user, setUser] = useState(null);
+  const baseURL = "http://localhost:5000/user/login";
 
-  const handleUserChange = (e) => setUser(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleUserName = (e) => setUserName(e.target.value);
+  const handlePassword = (e) => setPassword(e.target.value);
 
-  const submitForm = async (e) => {
+  const prof = user ? window.location.href = "http://google.com" : undefined;
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = JSON.stringify({
-      name: user,
+      name: userName,
       password: password,
     });
 
@@ -24,53 +26,51 @@ function Register() {
       },
       body: payload,
     });
-    console.log(await res.json());
+    const data = await res.json();
+    
+    setUser({ username: data.user.name, id: data.user.id, jwt: data.token });
+   
   };
-
-  const message = () =>{
-      if (password || user === true) {
-          alert("Registered")
-  }}
-
+ 
   return (
     <div className="App">
       <div>
-        <h1>Register</h1>
-        <form onSubmit={submitForm}>
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="user" className="form">
-            Username:{" "}
+            Username:
           </label>
           <input
             type="text"
             name="user"
-            value={user}
-            onChange={handleUserChange}
+            value={userName}
+            onChange={handleUserName}
             required= {true}
             placeholder="Enter a username"
-          ></input>
+          />
 
           <label htmlFor="password" className="form">
-            Password:{" "}
+            User:
           </label>
           <input
             type="password"
             name="password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={handlePassword}
             required= {true}
             placeholder="Enter a password"
-          ></input>
+          />
+
           <input
-          style={{marginBottom:"4rem"}}
             type="submit"
             value="Submit"
             className="submitbtn"
-            onClick={message}
-          ></input>
+            onClick={prof}
+          />       
         </form>
       </div>
     </div>
   );
 }
 
-export default Register;
+export default Login;
