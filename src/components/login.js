@@ -4,7 +4,6 @@ function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
-  const baseURL = "http://localhost:5000/user/login";
 
   const handleUserName = (e) => setUserName(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -18,7 +17,7 @@ function Login() {
       password: password,
     });
 
-    const res = await fetch(baseURL, {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}`, {
       method: "POST",
       mode: "cors",
       headers: {
