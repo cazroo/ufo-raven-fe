@@ -4,7 +4,6 @@ import React from "react";
 function Register() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
-  const baseURL = "http://localhost:5000/user/registeruser";
 
   const handleUserChange = (e) => setUser(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
@@ -16,7 +15,7 @@ function Register() {
       password: password,
     });
 
-    const res = await fetch(baseURL, {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}`, {
       method: "POST",
       mode: "cors",
       headers: {
