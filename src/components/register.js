@@ -36,6 +36,7 @@ function Register() {
       <div>
         <h1>Register</h1>
         <form onSubmit={submitForm}>
+          <div>
           <label htmlFor="user" className="form">
             Username:{" "}
           </label>
@@ -45,9 +46,10 @@ function Register() {
             value={user}
             onChange={handleUserChange}
             required= {true}
-            placeholder="Enter a username"
+            placeholder=""
           ></input>
-
+</div>
+<div>
           <label htmlFor="password" className="form">
             Password:{" "}
           </label>
@@ -57,10 +59,10 @@ function Register() {
             value={password}
             onChange={handlePasswordChange}
             required= {true}
-            placeholder="Enter a password"
+            placeholder=""
           ></input>
+          </div>
           <input
-          style={{marginBottom:"4rem"}}
             type="submit"
             value="Submit"
             className="submitbtn"
