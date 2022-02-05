@@ -2,8 +2,12 @@ import React from "react";
 import "./index.css";
 import Register from "./components/register";
 import Login from "./components/login";
-import {Home} from "./pages/home";
+
+import { Home } from "./pages/home";
+
+
 import { NavBar } from "./components/navBar"
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { render } from "react-dom";
 import { useState } from "react";
@@ -20,6 +24,11 @@ function Test() {
         <Route path="/" element={<Register />} />
         <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
         <Route path="/home" element={<Home/>}/>
+        <Route path="/dates" element={<Dates/>}/>
+        <Route path="/locations" element={<Locations/>}/>
+        <Route path="/events" element={<Events/>}/>
+
+
       </Routes>
     </BrowserRouter>
     </div>
