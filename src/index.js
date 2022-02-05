@@ -1,46 +1,28 @@
-import React from "react";
-import "./index.css";
-import Register from "./components/register";
-import Login from "./components/login";
+import { Link } from "react-router-dom"
+import {Route} from 'react-router-dom'
+import "./css/navBar.css"
 
-import { Home } from "./pages/home";
+export const NavBar = () => {
+    // const history = useHistory()
 
+    const handleClick=() => {
+        this.props.router.replace('login')
+    }
 
-import { NavBar } from "./components/navBar"
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { render } from "react-dom";
-import { useState } from "react";
-
-const rootElement = document.getElementById("root");
-
-function Test() {
-  const [user, setUser] = useState(null);
-  return (
-    <div>
-    <BrowserRouter>
-    <NavBar/>
-      <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
-        <Route path="/home" element={<Home/>}/>
-        <Route path="/dates" element={<Dates/>}/>
-        <Route path="/locations" element={<Locations/>}/>
-        <Route path="/events" element={<Events/>}/>
-
-
-      </Routes>
-    </BrowserRouter>
-    </div>
-  );
+    return (
+        <nav>
+            
+            <div id="navBar">
+                <li id="navBarList">
+                    <div id="navContent">
+                        <Link to="/home">HOME</Link>
+                        <Link to="/events">EVENTS</Link>
+                        <Link to="/locations">LOCATIONS</Link>#
+                        <Link to="/dates">DATES</Link>
+                    </div>
+                    <button>LOGIN</button>
+                </li>
+            </div>
+        </nav>
+    )
 }
-
-
-
-
-render(
-  <Test />,
-  rootElement
-);
-
-export default Test;
