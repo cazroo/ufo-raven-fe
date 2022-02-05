@@ -15,12 +15,10 @@ export const NavBar = () => {
             <div id="navBar">
                 <li id="navBarList">
                     <div id="navContent">
-                        <button>
-                            <Link to="/home">HOME</Link>
-                            </button>
-                        <button>REPORTS</button>
-                        <button>LOCATIONS</button>
-                        <button>DATES</button>
+                        <Link to="/home">HOME</Link>
+                        <Link to="/events">EVENTS</Link>
+                        <Link to="/locations">LOCATIONS</Link>#
+                        <Link to="/dates">DATES</Link>
                     </div>
                     <button>LOGIN</button>
                 </li>
