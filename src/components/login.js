@@ -1,14 +1,26 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom"
 
-function Login() {
+
+export const Login = (props) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
 
+  const baseURL = `${process.env.REACT_APP_BASE_URL}user/login`;
+
   const handleUserName = (e) => setUserName(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  const prof = user ? window.location.href = "http://google.com" : undefined;
+
+  // const clicked = () => {
+  //   console.log("clicked")
+  //   console.log(props.loginStatus)
+
+  //   props.setLoginStatus(false)
+  // }
+
+  const prof = user ? undefined : undefined
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +29,7 @@ function Login() {
       password: password,
     });
 
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}`, {
+    const res = await fetch(baseURL, {
       method: "POST",
       mode: "cors",
       headers: {
@@ -28,13 +40,13 @@ function Login() {
     const data = await res.json();
     
     setUser({ username: data.user.name, id: data.user.id, jwt: data.token });
-
   };
 
   return (
     <div className="App">
       <div>
         <h1>Login</h1>
+        <h2>{props.loginStatus}</h2>
         <form onSubmit={handleSubmit} className="form">
           <div>
             <label htmlFor="user" className="form">
@@ -73,5 +85,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;

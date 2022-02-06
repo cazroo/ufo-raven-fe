@@ -2,10 +2,11 @@ import { Link } from "react-router-dom"
 import React, { useState } from "react"
 import "./css/navBar.css"
 
-export const NavBar = (
-    {open, 
-    setOpen}
-    ) => {
+export const NavBar = (props) => {
+    const tempFunc = () => {
+        props.setOpen(true);
+        props.setLoginStatus(true)
+    }
 
     return (
         <nav>
@@ -34,7 +35,11 @@ export const NavBar = (
                             </button>
                         </Link>
                     </div>
-                    <button onClick={() => setOpen(true)}>LOGIN</button>
+                    <button onClick={() => tempFunc()}>
+                        {props.loginStatus === true ?
+                        "true": props.loginStatus === false ? "false" :
+                        "empty"}
+                    </button>
                 </li>
             </div>
         </nav>
