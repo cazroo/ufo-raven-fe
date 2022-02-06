@@ -1,4 +1,5 @@
 import "./App.css";
+import BasicTable from "./components/BasicTable";
 
 import { Link } from "react-router-dom";
 
@@ -40,7 +41,12 @@ function App() {
         ],
         []
       );
+    
 
 }
+
+return (
+ <BasicTable columns={columns} data={data}/>
+)
 
 export default App;

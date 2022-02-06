@@ -1,13 +1,1 @@
-.wrapper {
-  background-color: rgba(223, 188, 194, 0.315);
-  width: 100%;
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-}
 
-.tablebox {
-  background-color: indigo;
-  width: 700px;
-  display: flex;
-}

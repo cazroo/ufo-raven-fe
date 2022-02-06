@@ -25,10 +25,11 @@ body {
 
 .ufoReportsHeader {
   color: black;
+  margin-top: -10px;
 }
 
 .wrapper {
-  background-color: rgba(223, 188, 194, 0.315);
+  background-color: rgba(181, 181, 181, 0.103);
   width: 100%;
   margin-top: 100px;
   display: flex;
@@ -36,7 +37,8 @@ body {
 }
 
 .tablebox {
-  background-color: indigo;
+  background-color: rgba(160, 152, 152, 0.616);
   width: 700px;
   display: flex;
+  margin-top: -24px;
 }

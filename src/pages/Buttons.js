@@ -6,11 +6,11 @@ import "../components/css/buttons.css"
 import BasicTable from '../components/BasicTable';
 import Navbar from '../components/navBar'
 
-function Events(columns) {
+function Buttons() {
     return (
         <div className="wrapper">
             <div className="pageTitle">
-            <h1>EVENTS</h1>
+            <h1>Buttons Preview</h1>
             <div className="tablebox">
                 <div className="ufoReportsHeader">
                   <h2>U.F.O REPORT</h2>
