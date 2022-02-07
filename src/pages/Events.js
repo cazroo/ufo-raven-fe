@@ -3,8 +3,7 @@ import "../index.css";
 import "./cssPages/events.css"
 //button:
 import "../components/css/buttons.css"
-import BasicTable from '../components/BasicTable';
-import Navbar from '../components/navBar'
+// import Navbar from '../components/navBar'
 
 function Events(columns) {
     return (
