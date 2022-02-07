@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
+
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import "./css/modal.css"
@@ -10,25 +12,38 @@ export const LoginModal = (props) => {
     const [modalRoute, setModalRoute] = useState(false);
     const handleClick = () => {
         const tempRoute = modalRoute
-        setModalRoute(!tempRoute)
+        setModalRoute(!tempRoute);
     }
-
+    
     return (
         <div>
-
             <Modal
                 open={props.open}
                 onClose={() => props.setOpen(false)}
                 center
                 classNames={{
-                overlay: 'customOverlay',
-                modal: 'customModal',
+                    overlay: 'customOverlay',
+                    modal: 'customModal',
                 }}
             >
+                {props.user ? 
+                    console.log(props.user.username) : null}
                 {modalRoute ?
-                    <Register/>:
-                    <Login user={props.user} setUser={props.setUser}/> }
-                <button id="switch" onClick={() => handleClick()}>{modalRoute ? "Or login" : "Or Register"}</button>
+                    <Register/> :
+                    <Login 
+                    user={props.user} 
+                    setUser={props.setUser}
+                    setOpen={props.setOpen}
+                    />
+                }
+
+                <button 
+                    id="switch" 
+                    onClick={() => handleClick()}
+                >
+                    {modalRoute ? "Or login" : "Or Register"}
+                </button>
+
             </Modal>
 
         </div>

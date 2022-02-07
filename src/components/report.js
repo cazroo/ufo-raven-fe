@@ -94,49 +94,59 @@ function Report( { user } ) {
       <div>
         {/* <div>{cells && <PaginationTable columns={columns} data={data} />}</div>; */}
         {/* <p>{}</p> */}
-        <h1>Report Management</h1>
-        <p className="report">{newReports}</p>
-        <form onSubmit={submitForm}>
-          <label htmlFor="date" className="form">
-            Date:{" "}
-          </label>
-          <input
-            type="datetime-local"
-            name="date"
-            value={date}
-            onChange={handleDate}
-            required={true}
-          ></input>
+        <div className="wrapper">
+          <div className="pageTitle">
+            <h1 className="pageTitle">REPORT MANAGEMENT</h1>
+            <div className="tablebox">
+              <div className="ufoReportsHeader">
+              <h1 className="pageTitle">Add New Report</h1>
+              <p className="report">{newReports}</p>
+              <form onSubmit={submitForm} className="test">
+                <label htmlFor="date" className="form">
+                  Date:{" "}
+                </label>
+                <input
+                  type="datetime-local"
+                  name="date"
+                  value={date}
+                  onChange={handleDate}
+                  required={true}
+                ></input>
 
-          <label htmlFor="location" className="form">
-            Location:{" "}
-          </label>
-          <input
-            type="text"
-            name="location"
-            value={location}
-            onChange={handleLocation}
-            required={true}
-            placeholder="Enter a location"
-          ></input>
-          <label htmlFor="description" className="form">
-            Description:{" "}
-          </label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={handleDescription}
-            required={true}
-            placeholder="Please write a description"
-          ></input>
-          <input
-            style={{ marginBottom: "4rem" }}
-            type="submit"
-            value="Add report"
-            className="submitbtn"
-          ></input>
-        </form>
+                <label htmlFor="location" className="form">
+                  Location:{" "}
+                </label>
+                <input
+                  type="text"
+                  name="location"
+                  value={location}
+                  onChange={handleLocation}
+                  required={true}
+                  placeholder="Enter a location"
+                ></input>
+                <label htmlFor="description" className="form">
+                  Description:{" "}
+                </label>
+                <input
+                  type="text"
+                  name="description"
+                  value={description}
+                  onChange={handleDescription}
+                  required={true}
+                  placeholder="Please write a description"
+                ></input>
+                <input
+                  style={{ marginBottom: "4rem" }}
+                  type="submit"
+                  value="Add report"
+                  className="submitbtn"
+                ></input>
+              </form>
+ 
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 }</>

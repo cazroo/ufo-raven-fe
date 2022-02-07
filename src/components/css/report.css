@@ -2,3 +2,8 @@
     color: white;
   }
   
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
+import {withRouter} from 'react-router-dom';
 
-function Login( {user, setUser} ) {
+function Login(props) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigation=useNavigate()
+
 
   const handleUserName = (e) => setUserName(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -13,7 +18,6 @@ function Login( {user, setUser} ) {
       name: userName,
       password: password,
     });
-
     try {
       const res = await fetch(`${process.env.REACT_APP_BASE_URL}/user/login`, {
         method: "POST",
@@ -24,12 +28,16 @@ function Login( {user, setUser} ) {
         body: payload,
       });
       const data = await res.json();
-      console.log(data)
-      
-      setUser({ username: data.user.name, id: data.user.id, jwt: data.token });
-      alert("Logged in!")
+      props.setUser({ 
+        username: data.user.name, 
+        id: data.user.id, 
+        jwt: data.token
+      });
+      props.setOpen(false)
+      alert("Logged in!");
+      navigation('/report')
     } catch (error) {
-      alert("Wrong username or password!")
+      alert("Wrong username or password!");
     }
 
   };
@@ -43,6 +51,7 @@ function Login( {user, setUser} ) {
             <label htmlFor="user" className="form">
               Username: {" "}
             </label>
+
             <input
               type="text"
               name="user"
@@ -50,7 +59,8 @@ function Login( {user, setUser} ) {
               onChange={handleUserName}
               required= {true}
               placeholder=""
-            />
+              />
+            
           </div>
           <div>
             <label htmlFor="password" className="form">
@@ -65,11 +75,13 @@ function Login( {user, setUser} ) {
               placeholder=""
             />
           </div>
+
           <input
             type="submit"
             value="Submit"
             className="submitbtn"
           />       
+
         </form>
       </div>
     </div>
