@@ -83,9 +83,10 @@ function Report() {
     getData();
   }, []);
 
-  const data = React.useMemo(() => cells, []);
+  const data = React.useMemo(() => cells, [cells]);
 
   console.log(cells)
+  console.log(data)
   return (
     <div className="App">
       <div>
