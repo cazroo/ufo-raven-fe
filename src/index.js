@@ -13,10 +13,9 @@ import { useState } from "react";
 const rootElement = document.getElementById("root");
 
 function Test() {
-  const [user, setUser] = useState(null);
   const [open, setOpen] = useState(false);
 
-  
+
   return (
     <div>
     <BrowserRouter>
