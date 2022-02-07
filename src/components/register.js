@@ -14,59 +14,57 @@ function Register() {
       name: user,
       password: password,
     });
-
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}`, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: payload,
-    });
-    console.log(await res.json());
+    try {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/user/registeruser`, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: payload,
+      });
+      console.log(await res.json());
+      alert("User registered.")
+    } catch (error) {
+      alert("Unable to register user.");
+    }
   };
-
-  const message = () =>{
-      if (password || user === true) {
-          alert("Registered")
-  }}
-
+  
   return (
     <div className="App">
       <div>
         <h1>Register</h1>
         <form onSubmit={submitForm}>
           <div>
-          <label htmlFor="user" className="form">
-            Username:{" "}
-          </label>
-          <input
-            type="text"
-            name="user"
-            value={user}
-            onChange={handleUserChange}
-            required= {true}
-            placeholder=""
-          ></input>
-</div>
-<div>
-          <label htmlFor="password" className="form">
-            Password:{" "}
-          </label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required= {true}
-            placeholder=""
-          ></input>
+            <label htmlFor="user" className="form">
+              Username:{" "}
+            </label>
+            <input
+              type="text"
+              name="user"
+              value={user}
+              onChange={handleUserChange}
+              required={true}
+              placeholder=""
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="password" className="form">
+              Password:{" "}
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePasswordChange}
+              required={true}
+              placeholder=""
+            ></input>
           </div>
           <input
             type="submit"
             value="Submit"
             className="submitbtn"
-            onClick={message}
           ></input>
         </form>
       </div>

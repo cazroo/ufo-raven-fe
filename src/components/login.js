@@ -1,20 +1,11 @@
 import { useState } from "react";
 
-function Login() {
+function Login( {user, setUser} ) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
 
   const handleUserName = (e) => setUserName(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
-
-  const clicked = () => {
-    console.log("Clicked")
-  }
-
-  const prof = user ?  clicked : undefined;
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,17 +14,23 @@ function Login() {
       password: password,
     });
 
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}`, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: payload,
-    });
-    const data = await res.json();
-    
-    setUser({ username: data.user.name, id: data.user.id, jwt: data.token });
+    try {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/user/login`, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: payload,
+      });
+      const data = await res.json();
+      console.log(data)
+      
+      setUser({ username: data.user.name, id: data.user.id, jwt: data.token });
+      alert("Logged in!")
+    } catch (error) {
+      alert("Wrong username or password!")
+    }
 
   };
 
@@ -72,7 +69,6 @@ function Login() {
             type="submit"
             value="Submit"
             className="submitbtn"
-            onClick={prof}
           />       
         </form>
       </div>

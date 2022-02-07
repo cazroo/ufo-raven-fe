@@ -27,7 +27,7 @@ export const LoginModal = (props) => {
             >
                 {modalRoute ?
                     <Register/>:
-                    <Login/> }
+                    <Login user={props.user} setUser={props.setUser}/> }
                 <button id="switch" onClick={() => handleClick()}>{modalRoute ? "Or login" : "Or Register"}</button>
             </Modal>
 
