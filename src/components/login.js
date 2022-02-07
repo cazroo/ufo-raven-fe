@@ -34,38 +34,40 @@ function Login() {
     const data = await res.json();
     
     setUser({ username: data.user.name, id: data.user.id, jwt: data.token });
-   
+
   };
- 
+
   return (
     <div className="App">
       <div>
         <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="user" className="form">
-            Username:
-          </label>
-          <input
-            type="text"
-            name="user"
-            value={userName}
-            onChange={handleUserName}
-            required= {true}
-            placeholder="Enter a username"
-          />
-
-          <label htmlFor="password" className="form">
-            User:
-          </label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePassword}
-            required= {true}
-            placeholder="Enter a password"
-          />
-
+        <form onSubmit={handleSubmit} className="form">
+          <div>
+            <label htmlFor="user" className="form">
+              Username: {" "}
+            </label>
+            <input
+              type="text"
+              name="user"
+              value={userName}
+              onChange={handleUserName}
+              required= {true}
+              placeholder=""
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="form">
+              Password:{" "}
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+              required= {true}
+              placeholder=""
+            />
+          </div>
           <input
             type="submit"
             value="Submit"
