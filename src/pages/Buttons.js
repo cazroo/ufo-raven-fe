@@ -40,7 +40,7 @@ function Buttons() {
     )
 }
 
-export default Events
+export default Buttons
 
 
 
