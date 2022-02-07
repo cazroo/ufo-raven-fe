@@ -8,7 +8,13 @@ function Login() {
   const handleUserName = (e) => setUserName(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  const prof = user ? window.location.href = "http://google.com" : undefined;
+  const clicked = () => {
+    console.log("Clicked")
+  }
+
+  const prof = user ?  clicked : undefined;
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
