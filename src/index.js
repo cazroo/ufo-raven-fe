@@ -1,7 +1,5 @@
 import React from "react";
 import "./index.css";
-import Register from "./components/register";
-import Login from "./components/login";
 import { Home } from "./pages/home";
 import { Events } from "./pages/events";
 import { Dates } from "./pages/dates";
@@ -17,20 +15,24 @@ const rootElement = document.getElementById("root");
 function Test() {
   const [user, setUser] = useState(null);
   const [open, setOpen] = useState(false);
+
+  
   return (
     <div>
     <BrowserRouter>
-      <NavBar open={open} setOpen={setOpen}/>
-      <LoginModal open={open} setOpen={setOpen} />
+      <NavBar 
+        open={open} 
+        setOpen={setOpen}
+      />
+      <LoginModal 
+        open={open} 
+        setOpen={setOpen} 
+      />
       <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/login" element={<Login user={user} setUser={setUser}/>} />
-        <Route path="/home" element={<Home/>}/>
+        <Route path="/" element={<Home />} />
         <Route path="/dates" element={<Dates/>}/>
         <Route path="/locations" element={<Locations/>}/>
         <Route path="/events" element={<Events/>}/>
-        <Route path="/register" element={<Register/>}/>
-
       </Routes>
     </BrowserRouter>
     </div>
