@@ -98,7 +98,7 @@ function Report({ user }) {
             Date:{" "}
           </label>
           <input
-            type="date"
+            type="datetime-local"
             name="date"
             value={date}
             onChange={handleDate}
