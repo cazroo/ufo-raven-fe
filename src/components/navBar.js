@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom"
-import {Route} from 'react-router-dom'
 import "./css/navBar.css"
 
 export const NavBar = () => {
     // const history = useHistory()
 
-    const handleClick=() => {
-        this.props.router.replace('login')
-    }
+    // const handleClick=() => {
+    //     this.props.router.replace('login')
+    // }
 
     return (
         <nav>
