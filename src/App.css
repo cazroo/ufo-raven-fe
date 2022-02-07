@@ -21,6 +21,7 @@ body {
 body {
   background-image: url(./components/Images/jake-weirick-star\ wallpaper.jpg);
   background-size: 80%;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -52,8 +53,7 @@ h1 {
 }
 
 .tablebox {
-  background-color: rgba(160, 152, 152, 0.616);
+  background-color: rgba(160, 152, 152, 0.596);
   width: 700px;
   display: flex;
-  margin-top: -24px;
 }
