@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // // import React from "react";
-// import PaginationTable from "./PaginationTable";
-import './css/report.css';
+import PaginationTable from "./PaginationTable";
+import "./css/report.css";
 
-
-function Report( { user } ) {
+function Report({ user }) {
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [newReports, setNewReports] = useState([]);
-  // const [cells, setCells] = useState([]);
+  const [cells, setCells] = useState([]);
 
   // const getData = async () => {
   //   const resp = await fetch(`${process.env.REACT_APP_BASE_URL}/report`);
@@ -44,15 +43,15 @@ function Report( { user } ) {
     console.log(await res.json());
   };
 
-  // const getData = async () => {
-  //   const res = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
-  //     node: "cors",
-  //     method: "GET",
-  //   });
-  //   const data = await res.json();
-  //   const finalData = await data.data
-  //   setCells([finalData]);
-  // };
+  const getData = async () => {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
+      node: "cors",
+      method: "GET",
+    });
+    const data = await res.json();
+    const finalData = await data.data;
+    setCells(finalData);
+  };
 
   // const getData = async () => {
   //   const resp = await fetch(`${process.env.REACT_APP_BASE_URL}/report`);
@@ -62,34 +61,34 @@ function Report( { user } ) {
   //   console.log(cell)
   // };
 
-  // const columns = React.useMemo(
-  //   () => [
-  //     {
-  //       Header: "Date",
-  //       accessor: "date", // accessor is the "key" in the data
-  //     },
-  //     {
-  //       Header: "Location",
-  //       accessor: "location",
-  //     },
-  //     {
-  //       Header: "Description",
-  //       accessor: "description",
-  //     },
-  //   ],
-  //   []
-  // );
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "Date",
+        accessor: "date", // accessor is the "key" in the data
+      },
+      {
+        Header: "Location",
+        accessor: "location",
+      },
+      {
+        Header: "Description",
+        accessor: "description",
+      },
+    ],
+    []
+  );
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    getData();
+  }, []);
 
-  // const data = React.useMemo(() => cells, [cells]);
+  const data = React.useMemo(() => cells, [cells]);
 
-  // console.log(cells)
-  // console.log(data)
+  console.log(cells);
+  console.log(data);
   return (
-  <>{!user ? "" : 
+    // <>{!user || user ? "" :
     <div className="App">
       <div>
         {/* <div>{cells && <PaginationTable columns={columns} data={data} />}</div>; */}
@@ -142,14 +141,13 @@ function Report( { user } ) {
                   className="submitbtn"
                 ></input>
               </form>
- 
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-}</>
+    // }</>
   );
 }
 
