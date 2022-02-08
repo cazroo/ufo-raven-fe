@@ -17,7 +17,11 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <NavBar open={open} setOpen={setOpen} />
+        <NavBar 
+          open={open} 
+          setOpen={setOpen} 
+          user={user}
+          setUser={setUser}/>
         <LoginModal
           open={open}
           setOpen={setOpen}
