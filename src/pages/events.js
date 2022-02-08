@@ -12,12 +12,12 @@ export function Events() {
 
   const getData = async () => {
     const res = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
-      node: "cors",
+      mode: "cors",
       method: "GET",
     });
     const data = await res.json();
-    const finalData = await data.data;
-    setCells(finalData);
+    
+    setCells(data.data);
   };
 
   const columns = React.useMemo(
@@ -32,7 +32,7 @@ export function Events() {
       },
       {
         Header: "Location",
-        accessor: "location",
+        accessor: "location.name",
       },
     ],
     []
@@ -44,8 +44,7 @@ export function Events() {
 
   const data = React.useMemo(() => cells, [cells]);
 
-  console.log(cells);
-  console.log(data);
+ 
   return (
     <div className="wrapper">
       <div className="pageTitle">
@@ -67,13 +66,6 @@ export function Events() {
                       </div>
                       ;
                     </td>
-                    {/* {cells.map(cells => (
-          <tr key={cells.id}>
-            
-          
-          
-          </tr>
-        ))} */}
                   </tbody>
                 </table>
               </div>

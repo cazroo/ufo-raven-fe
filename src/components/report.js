@@ -7,14 +7,9 @@ function Report({ user }) {
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
+
   const [newReports, setNewReports] = useState([]);
   const [cells, setCells] = useState([]);
-
-  // const getData = async () => {
-  //   const resp = await fetch(`${process.env.REACT_APP_BASE_URL}/report`);
-  //   const data = await resp.json();
-  //   await setCell(data);
-  // };
 
   const handleDate = (e) => setDate(e.target.value);
   const handleLocation = (e) => setLocation(e.target.value);
@@ -44,22 +39,15 @@ function Report({ user }) {
   };
 
   const getData = async () => {
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
-      node: "cors",
+    const reportRes = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
+      mode: "cors",
       method: "GET",
     });
-    const data = await res.json();
-    const finalData = await data.data;
-    setCells(finalData);
-  };
 
-  // const getData = async () => {
-  //   const resp = await fetch(`${process.env.REACT_APP_BASE_URL}/report`);
-  //   const data = await resp.json();
-  //   console.log(data)
-  //   setCell(data);
-  //   console.log(cell)
-  // };
+    const data = await reportRes.json();
+
+    setCells(data.data);
+  };
 
   const columns = React.useMemo(
     () => [
@@ -69,7 +57,7 @@ function Report({ user }) {
       },
       {
         Header: "Location",
-        accessor: "location",
+        accessor: "location.name",
       },
       {
         Header: "Description",
@@ -85,8 +73,6 @@ function Report({ user }) {
 
   const data = React.useMemo(() => cells, [cells]);
 
-  console.log(cells);
-  console.log(data);
   return (
     // <>{!user || user ? "" :
     <div className="App">
@@ -141,26 +127,12 @@ function Report({ user }) {
 
         </div>
         <table>
-          <thead>
-            {/* <tr>
-              <th>Description </th>
-              <th> Date </th>
-              <th> Location </th>
-            </tr> */}
-          </thead>
-
+    
           
           <tbody>
             <td>
             <div>{cells && <PaginationTable columns={columns} data={data} />}</div>;
             </td>
-          {/* {cells.map(cells => (
-          <tr key={cells.id}>
-            
-          
-          
-          </tr>
-        ))} */}
           </tbody>
         </table>
       </div>
@@ -170,46 +142,3 @@ function Report({ user }) {
 }
 
 export default Report;
-
-// const getAllReportsFetch = async () => {
-//     try {
-//         const res = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
-//             node: "cors",
-//             method: "GET",
-//         })
-//         return await res.json();
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-
-// const getSingleReportFetch = async (id) => {
-//     try {
-//         const url = `${process.env.REACT_APP_BASE_URL}/report/${id}`;
-//         const res = await fetch (url, {
-//             method: "GET"
-//         });
-//         return await res.json();
-//     } catch (error) {
-//         console.log(error)
-//     }
-// };
-
-// const addReportFetch = async (title, date, location, description) => {
-//     try {
-//         const res = await fetch (`${process.env.REACT_APP_BASE_URL}report`, {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify({
-//                 title,
-//                 date,
-//                 location,
-//                 description
-//             })
-//         });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
