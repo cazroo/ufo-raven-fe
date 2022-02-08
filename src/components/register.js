@@ -15,6 +15,7 @@ function Register() {
       password: password,
     });
     try {
+      console.log(process.env.REACT_APP_BASE_URL)
       const res = await fetch(`${process.env.REACT_APP_BASE_URL}/user/registeruser`, {
         method: "POST",
         mode: "cors",
@@ -26,6 +27,7 @@ function Register() {
       console.log(await res.json());
       alert("User registered.")
     } catch (error) {
+      console.log(error)
       alert("Unable to register user.");
     }
   };

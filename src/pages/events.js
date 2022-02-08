@@ -91,7 +91,6 @@ export function Events() {
         </table>
                   </div>
                   </div>
-               
                 
 
                 </div>
