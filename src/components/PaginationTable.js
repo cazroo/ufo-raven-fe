@@ -17,7 +17,7 @@ export default function PaginationTable({ columns, data }) {
     {
       columns,
       data,
-      initialState: { pageSize: 2 }
+      initialState: { pageSize: 10 } // number of objects displayed
     },
     usePagination
   );
