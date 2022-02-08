@@ -1,9 +1,8 @@
 import React from 'react'
 import "../App.css";
-// import "./cssPages/events.css"
-//button:
+
 import "../components/css/buttons.css"
-// import Navbar from '../components/navBar'
+
 
 export function Events() {
     return (
@@ -30,26 +29,3 @@ export function Events() {
         </div>
     )
 }
-
-
-
-
-
-/*
-<table>
-        <thead>
-          <tr>
-            <th>Description </th>
-            <th> Date </th>
-            <th> Location </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr> 
-            <td>target.id.description </td>
-            <td>target.id.date </td>
-            <td>target.id.location </td>
-          </tr>
-        </tbody>
-      </table>
-*/
