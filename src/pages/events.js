@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 
 import "../components/css/buttons.css"
-// import Navbar from '../components/navBar'
 import PaginationTable from "../components/PaginationTable";
 
 

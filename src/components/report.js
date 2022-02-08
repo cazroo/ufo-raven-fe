@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// // import React from "react";
-import PaginationTable from "./PaginationTable";
 import "./css/report.css";
 
 function Report({ user }) {
@@ -47,13 +45,7 @@ function Report({ user }) {
     setCells(finalData);
   };
 
-  // const getData = async () => {
-  //   const resp = await fetch(`${process.env.REACT_APP_BASE_URL}/report`);
-  //   const data = await resp.json();
-  //   console.log(data)
-  //   setCell(data);
-  //   console.log(cell)
-  // };
+
 
   const columns = React.useMemo(
     () => [
