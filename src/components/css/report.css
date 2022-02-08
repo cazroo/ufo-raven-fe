@@ -3,3 +3,8 @@
     background-color: black;
   }
   
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

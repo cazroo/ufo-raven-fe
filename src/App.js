@@ -5,7 +5,7 @@ import { Dates } from "./pages/dates";
 import { Locations } from "./pages/locations";
 import { NavBar } from "./components/navBar";
 import { LoginModal } from "./components/modal";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { useState } from "react";
 import Report from "./components/report";
 
@@ -13,6 +13,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
 
+  
   return (
     <div>
       <BrowserRouter>

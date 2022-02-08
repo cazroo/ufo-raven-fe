@@ -16,12 +16,14 @@ body {
   font-family: "Archivo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
   background-image: url(./components/Images/jake-weirick-star\ wallpaper.jpg);
   background-size: 80%;
   background-attachment: fixed;
+}
+
+
+label {
+  color: white;
 }
 
 h1 {
@@ -32,7 +34,22 @@ h1 {
 
 .tablebox {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+button {
+  background-color: black;
+  color:white;
+  border: none;
+  margin:0px 4px 0px 4px;
+  height: 100%;
+}
+
+.submitbtn {
+  background-color: black;
+  color:white;
+  border: none;
 }
 
 .pageTitle {
@@ -46,8 +63,14 @@ h1 {
 
 .wrapper {
   background-color: rgba(181, 181, 181, 0.103);
+  box-shadow: 0 0 5px 5px rgba(181, 181, 181, 0.103);
+
+  border-top: 10px;
+  border-bottom: 10px;
+  
   width: 100%;
   margin-top: 100px;
+  padding-bottom: 21px;
   display: flex;
   justify-content: center;
 }
