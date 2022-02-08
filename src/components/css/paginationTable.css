@@ -1,0 +1,15 @@
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+tbody tr:nth-child(odd) {
+  background-color: #d7d7d78c;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #a2a2a2ba;
+}
+
+table {
+  background-color: #49ffd53f;
+}
