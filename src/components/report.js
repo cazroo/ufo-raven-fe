@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import PaginationTable from "./Table components/PaginationTable";
 import "./css/report.css";
 
-function Report( {user} ) {
+function Report({ user }) {
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
@@ -21,11 +21,9 @@ function Report( {user} ) {
       date: date,
       name: location,
       description: description,
-      userId: user.id
+      userId: user.id,
     });
-   
-    
-  
+
     let copy = [...newReports];
     copy.push(payload);
     setNewReports(copy);
@@ -42,17 +40,33 @@ function Report( {user} ) {
     getData();
   };
 
-
   const getData = async () => {
-    const reportRes = await fetch(`${process.env.REACT_APP_BASE_URL}/user/${user.id}`, {
-      mode: "cors",
-      method: "GET",
-    });
+    const reportRes = await fetch(
+      `${process.env.REACT_APP_BASE_URL}/user/${user.id}`,
+      {
+        mode: "cors",
+        method: "GET",
+      }
+    );
 
     const data = await reportRes.json();
-    console.log(data[0].reports)
+    console.log(data[0].reports);
     setCells(data[0].reports);
   };
+
+  //  @@@@@@@@@@@@@@@@@DELETE ITEM@@@@@@@@@@@@@@@@
+
+  const Deleteid = async () => {
+    const reportDel = fetch(
+      `${process.env.REACT_APP_BASE_URL}/user/${user.id}`,
+      {
+        mode: "CORS",
+        method: "DELETE",
+      }
+    ).then((res) => res);
+  };
+
+  //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
   const columns = React.useMemo(
     () => [
@@ -77,12 +91,8 @@ function Report( {user} ) {
   useEffect(() => {
     getData(user);
   });
- 
-
-  
 
   return (
-
     // <>{!user || user ? "" :
     <div className="App">
       <div className="report">
@@ -127,23 +137,22 @@ function Report( {user} ) {
             type="submit"
             value="Add report"
             className="submitbtn"
-  
           ></input>
         </form>
         <table>
           <tbody>
             <td>
               <div>
-                {cells && <PaginationTable columns={columns} data={data} />}
+                {cells && <PaginationTable columns={columns} data={data} /> && (
+                  <button>Defaulst</button>
+                )}
               </div>
-              ;
             </td>
           </tbody>
         </table>
       </div>
     </div>
     // }</>
-
   );
 }
 

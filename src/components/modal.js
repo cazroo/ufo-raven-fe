@@ -7,34 +7,34 @@ import { default as Login } from "./login";
 import Register from "./register";
 
 export const LoginModal = (props) => {
-    const [modalRoute, setModalRoute] = useState(false);
-    const handleClick = () => {
-        const tempRoute = modalRoute
-        setModalRoute(!tempRoute);
-    }
-    
-    return (
-        <div>
-            <Modal
-                open={props.open}
-                onClose={() => props.setOpen(false)}
-                center
-                classNames={{
-                    overlay: 'customOverlay',
-                    modal: 'customModal',
-                }}
-            >
-                {props.user ? 
-                    console.log("") : null}
+  const [modalRoute, setModalRoute] = useState(false);
+  const handleClick = () => {
+    const tempRoute = modalRoute;
+    setModalRoute(!tempRoute);
+  };
 
-                {modalRoute ?
-                    <Register/> :
-                    <Login 
-                    user={props.user} 
-                    setUser={props.setUser}
-                    setOpen={props.setOpen}
-                    />
-                }
+  // return (
+  //     <div>
+  //         <Modal
+  //             open={props.open}
+  //             onClose={() => props.setOpen(false)}
+  //             center
+  //             classNames={{
+  //                 overlay: 'customOverlay',
+  //                 modal: 'customModal',
+  //             }}
+  //         >
+  //             {props.user ?
+  //                 console.log("") : null}
+
+  //             {modalRoute ?
+  //                 <Register/> :
+  //                 <Login
+  //                 user={props.user}
+  //                 setUser={props.setUser}
+  //                 setOpen={props.setOpen}
+  //                 />
+  //             }
 
   return (
     <div>

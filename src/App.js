@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Report from "./components/report";
 import Maap from "./components/map";
+import Footer from "./components/footer";
 function App() {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -16,11 +17,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <NavBar 
-          open={open} 
-          setOpen={setOpen} 
-          user={user}
-          setUser={setUser}/>
+        <NavBar open={open} setOpen={setOpen} user={user} setUser={setUser} />
         <LoginModal
           open={open}
           setOpen={setOpen}
@@ -31,9 +28,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/dates" element={<Dates />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/locations" element={<Locations />}/>
+          <Route path="/locations" element={<Locations />} />
           <Route path="/report" element={<Report user={user} />} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </div>
   );
