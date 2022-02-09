@@ -74,8 +74,9 @@ function Report( {user} ) {
   const data = React.useMemo(() => cells, [cells]);
 
   useEffect(() => {
-    getData();
-  }, [user]);
+    getData(user);
+  });
+ 
 
   
 
