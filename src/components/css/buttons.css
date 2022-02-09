@@ -325,25 +325,3 @@
 .add-button:hover {
   transform: scale(1.1);
 }
-
-/* RETURN WRITTEN BUTTON */
-.return-button {
-  font-size: 0.7vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 45px;
-  height: 30px;
-  border-radius: 0%;
-  position: relative;
-  overflow: hidden;
-}
-
-.return-button {
-  background: #12d3ba;
-  border: 4px solid #000000;
-}
-
-.return-button:hover {
-  transform: scale(1.1);
-}

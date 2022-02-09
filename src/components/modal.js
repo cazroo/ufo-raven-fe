@@ -1,11 +1,10 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import { Modal } from 'react-responsive-modal';
-import 'react-responsive-modal/styles.css';
-import "./css/modal.css"
-import { default as Login } from "./login"; 
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
+import "./css/modal.css";
+import { default as Login } from "./login";
 import Register from "./register";
-
 
 export const LoginModal = (props) => {
     const [modalRoute, setModalRoute] = useState(false);
@@ -37,14 +36,32 @@ export const LoginModal = (props) => {
                     />
                 }
 
-                <button 
-                    id="switch" 
-                    onClick={() => handleClick()}
-                >
-                    {modalRoute ? "Or login" : "Or Register"}
-                </button>
+  return (
+    <div>
+      <Modal
+        open={props.open}
+        onClose={() => props.setOpen(false)}
+        center
+        classNames={{
+          overlay: "customOverlay",
+          modal: "customModal",
+        }}
+      >
+        {props.user ? console.log(props.user.username) : null}
+        {modalRoute ? (
+          <Register />
+        ) : (
+          <Login
+            user={props.user}
+            setUser={props.setUser}
+            setOpen={props.setOpen}
+          />
+        )}
 
-            </Modal>
-
-        </div>
-)}
+        <button id="switch" onClick={() => handleClick()}>
+          {modalRoute ? "Or Login" : "or Register"}
+        </button>
+      </Modal>
+    </div>
+  );
+};
