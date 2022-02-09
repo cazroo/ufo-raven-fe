@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/paginationTable.css";
+import "../css/paginationTable.css";
 
 import { useTable, useGlobalFilter, usePagination } from "react-table";
 import { GlobalFilter } from "./GlobalFilter";
@@ -15,6 +15,8 @@ export default function FilteringTable({ columns, data }) {
     previousPage,
     canNextPage,
     canPreviousPage,
+    gotoPage,
+    pageCount,
     prepareRow, // Prepare the row (this function needs to be called for each row before getting the row props)
     state,
     setGlobalFilter, // function to set global filter text value
@@ -66,14 +68,23 @@ export default function FilteringTable({ columns, data }) {
                   })}
                 </tbody>
               </table>
+              <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+                {"<<"}
+              </button>
               <button
                 onClick={() => previousPage()}
                 disabled={!canPreviousPage}
               >
-                Previous page{" "}
+                Previous{" "}
               </button>
               <button onClick={() => nextPage()} disabled={!canNextPage}>
-                Next page{" "}
+                Next{" "}
+              </button>
+              <button
+                onClick={() => gotoPage(pageCount - 1)}
+                disabled={!canNextPage}
+              >
+                {">>"}
               </button>
             </div>
           </div>

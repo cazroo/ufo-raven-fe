@@ -3,7 +3,8 @@ import "../App.css";
 // import "./cssPages/events.css"
 //button:
 import "../components/css/buttons.css";
-import FilteringTable from "../components/FilteringTable";
+// import ColumnOrder from "../components/Table components/ColumnOrder";
+import FilteringTable from "../components/Table components/FilteringTable";
 // import Navbar from '../components/navBar'
 // import PaginationTable from "../components/PaginationTable";
 

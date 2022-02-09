@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/paginationTable.css";
+import "../css/paginationTable.css";
 
 import { useTable, usePagination } from "react-table";
 
