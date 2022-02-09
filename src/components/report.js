@@ -81,6 +81,7 @@ function Report( {user} ) {
   
 
   return (
+
     // <>{!user || user ? "" :
     <div className="App">
       <div className="report">
@@ -141,6 +142,7 @@ function Report( {user} ) {
       </div>
     </div>
     // }</>
+
   );
 }
 

@@ -27,6 +27,7 @@ export const LoginModal = (props) => {
             >
                 {props.user ? 
                     console.log("") : null}
+
                 {modalRoute ?
                     <Register/> :
                     <Login 
