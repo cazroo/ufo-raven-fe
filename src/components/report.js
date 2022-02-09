@@ -19,7 +19,7 @@ function Report({ user }) {
     e.preventDefault();
     const payload = JSON.stringify({
       date: date,
-      location: location,
+      name: location,
       description: description,
     });
 
@@ -27,7 +27,7 @@ function Report({ user }) {
     copy.push(payload);
     setNewReports(copy);
 
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/location`, {
       method: "POST",
       mode: "cors",
       headers: {
@@ -74,70 +74,69 @@ function Report({ user }) {
   const data = React.useMemo(() => cells, [cells]);
 
   return (
-    // <>{!user || user ? "" :
-    <div className="App">
-      <div className="report">
-        <h1>Report Management</h1>
-        <p className="report">{newReports}</p>
-        <form onSubmit={submitForm}>
-          <label htmlFor="date" className="form">
-            Date:{" "}
-          </label>
-          <input
-            type="datetime-local"
-            name="date"
-            value={date}
-            onChange={handleDate}
-            required={true}
-          ></input>
+    <>
+      {!user ? (
+        ""
+      ) : (
+        <div className="App">
+          <div className="report">
+            <h1>Report Management</h1>
+            <p className="report">{newReports}</p>
+            <form onSubmit={submitForm}>
+              <label htmlFor="date" className="form">
+                Date:{" "}
+              </label>
+              <input
+                type="datetime-local"
+                name="date"
+                value={date}
+                onChange={handleDate}
+                required={true}
+              ></input>
 
-          <label htmlFor="location" className="form">
-            Location:{" "}
-          </label>
-          <input
-            type="text"
-            name="location"
-            value={location}
-            onChange={handleLocation}
-            required={true}
-            placeholder="Enter a location"
-          ></input>
-          <label htmlFor="description" className="form">
-            Description:{" "}
-          </label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={handleDescription}
-            required={true}
-            placeholder="Please write a description"
-          ></input>
-          <input
-            style={{ marginBottom: "4rem" }}
-            type="submit"
-            value="Add report"
-            className="submitbtn"
-          ></input>
-        </form>
-
-
-
-        <div>
-
+              <label htmlFor="location" className="form">
+                Location:{" "}
+              </label>
+              <input
+                type="text"
+                name="location"
+                value={location}
+                onChange={handleLocation}
+                required={true}
+                placeholder="Enter a location"
+              ></input>
+              <label htmlFor="description" className="form">
+                Description:{" "}
+              </label>
+              <input
+                type="text"
+                name="description"
+                value={description}
+                onChange={handleDescription}
+                required={true}
+                placeholder="Please write a description"
+              ></input>
+              <input
+                style={{ marginBottom: "4rem" }}
+                type="submit"
+                value="Add report"
+                className="submitbtn"
+              ></input>
+            </form>
+            <table>
+              <tbody>
+                <td>
+                  <div>
+                    {cells && <PaginationTable columns={columns} data={data} />}
+                  </div>
+                  ;
+                </td>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <table>
-    
-          
-          <tbody>
-            <td>
-            <div>{cells && <PaginationTable columns={columns} data={data} />}</div>;
-            </td>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    // }</>
+      )}
+    </>
   );
 }
 
