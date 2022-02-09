@@ -4,9 +4,10 @@ import "../App.css";
 //button:
 import "../components/css/buttons.css";
 // import ColumnOrder from "../components/Table components/ColumnOrder";
-import FilteringTable from "../components/Table components/FilteringTable";
-// import Navbar from '../components/navBar'
-// import PaginationTable from "../components/PaginationTable";
+// import FilteringTable from "../components/TableComponents/FilteringTable";
+
+import { format } from "date-fns";
+import ColumnOrder from "../components/TableComponents/ColumnOrder";
 
 export function Events() {
   const [cells, setCells] = useState([]);
@@ -30,6 +31,9 @@ export function Events() {
       {
         Header: "Date",
         accessor: "date",
+        Cell: ({ value }) => {
+          return format(new Date(value), "dd/MM/yyyy");
+        },
       },
       {
         Header: "Location",
@@ -60,11 +64,8 @@ export function Events() {
                   <tbody>
                     <td>
                       <div>
-                        {cells && (
-                          <FilteringTable columns={columns} data={data} />
-                        )}
+                        {cells && <ColumnOrder columns={columns} data={data} />}
                       </div>
-                      ;
                     </td>
                   </tbody>
                 </table>
