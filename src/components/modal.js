@@ -24,6 +24,8 @@ export const LoginModal = (props) => {
                     modal: 'customModal',
                 }}
             >
+                {props.user ? 
+                    console.log("") : null}
 
                 {modalRoute ?
                     <Register/> :

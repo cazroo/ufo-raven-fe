@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import PaginationTable from "./Table components/PaginationTable";
 import "./css/report.css";
 
-function Report({ user }) {
+function Report( {user} ) {
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
@@ -21,8 +21,11 @@ function Report({ user }) {
       date: date,
       name: location,
       description: description,
+      userId: user.id
     });
-
+   
+    
+  
     let copy = [...newReports];
     copy.push(payload);
     setNewReports(copy);
@@ -36,17 +39,19 @@ function Report({ user }) {
       body: payload,
     });
     console.log(await res.json());
+    getData();
   };
 
+
   const getData = async () => {
-    const reportRes = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
+    const reportRes = await fetch(`${process.env.REACT_APP_BASE_URL}/user/${user.id}`, {
       mode: "cors",
       method: "GET",
     });
 
     const data = await reportRes.json();
-
-    setCells(data.data);
+    console.log(data[0].reports)
+    setCells(data[0].reports);
   };
 
   const columns = React.useMemo(
@@ -67,76 +72,78 @@ function Report({ user }) {
     []
   );
 
-  useEffect(() => {
-    getData();
-  }, []);
-
   const data = React.useMemo(() => cells, [cells]);
 
-  return (
-    <>
-      {!user ? (
-        ""
-      ) : (
-        <div className="App">
-          <div className="report">
-            <h1>Report Management</h1>
-            <p className="report">{newReports}</p>
-            <form onSubmit={submitForm}>
-              <label htmlFor="date" className="form">
-                Date:{" "}
-              </label>
-              <input
-                type="datetime-local"
-                name="date"
-                value={date}
-                onChange={handleDate}
-                required={true}
-              ></input>
+  useEffect(() => {
+    getData(user);
+  });
+ 
 
-              <label htmlFor="location" className="form">
-                Location:{" "}
-              </label>
-              <input
-                type="text"
-                name="location"
-                value={location}
-                onChange={handleLocation}
-                required={true}
-                placeholder="Enter a location"
-              ></input>
-              <label htmlFor="description" className="form">
-                Description:{" "}
-              </label>
-              <input
-                type="text"
-                name="description"
-                value={description}
-                onChange={handleDescription}
-                required={true}
-                placeholder="Please write a description"
-              ></input>
-              <input
-                style={{ marginBottom: "4rem" }}
-                type="submit"
-                value="Add report"
-                className="submitbtn"
-              ></input>
-            </form>
-            <table>
-              <tbody>
-                <td>
-                  <div>
-                    {cells && <PaginationTable columns={columns} data={data} />}
-                  </div>
-                  ;
-                </td>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-    </>
+  
+
+  return (
+
+    // <>{!user || user ? "" :
+    <div className="App">
+      <div className="report">
+        <h1>Report Management</h1>
+        <p className="report">{newReports}</p>
+        <form onSubmit={submitForm}>
+          <label htmlFor="date" className="form">
+            Date:{" "}
+          </label>
+          <input
+            type="datetime-local"
+            name="date"
+            value={date}
+            onChange={handleDate}
+            required={true}
+          ></input>
+
+          <label htmlFor="location" className="form">
+            Location:{" "}
+          </label>
+          <input
+            type="text"
+            name="location"
+            value={location}
+            onChange={handleLocation}
+            required={true}
+            placeholder="Enter a location"
+          ></input>
+          <label htmlFor="description" className="form">
+            Description:{" "}
+          </label>
+          <input
+            type="text"
+            name="description"
+            value={description}
+            onChange={handleDescription}
+            required={true}
+            placeholder="Please write a description"
+          ></input>
+          <input
+            style={{ marginBottom: "4rem" }}
+            type="submit"
+            value="Add report"
+            className="submitbtn"
+  
+          ></input>
+        </form>
+        <table>
+          <tbody>
+            <td>
+              <div>
+                {cells && <PaginationTable columns={columns} data={data} />}
+              </div>
+              ;
+            </td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    // }</>
+
   );
 }
 
