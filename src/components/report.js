@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-// // import React from "react";
 import PaginationTable from "./PaginationTable";
 import "./css/report.css";
 
-function Report({ user }) {
+function Report( {user} ) {
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
@@ -19,15 +18,18 @@ function Report({ user }) {
     e.preventDefault();
     const payload = JSON.stringify({
       date: date,
-      location: location,
+      name: location,
       description: description,
+      userId: user.id
     });
-
+   
+    
+  
     let copy = [...newReports];
     copy.push(payload);
     setNewReports(copy);
 
-    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/location`, {
       method: "POST",
       mode: "cors",
       headers: {
@@ -36,17 +38,19 @@ function Report({ user }) {
       body: payload,
     });
     console.log(await res.json());
+    getData();
   };
 
+
   const getData = async () => {
-    const reportRes = await fetch(`${process.env.REACT_APP_BASE_URL}/report`, {
+    const reportRes = await fetch(`${process.env.REACT_APP_BASE_URL}/user/${user.id}`, {
       mode: "cors",
       method: "GET",
     });
 
     const data = await reportRes.json();
-
-    setCells(data.data);
+    console.log(data[0].reports)
+    setCells(data[0].reports);
   };
 
   const columns = React.useMemo(
@@ -67,11 +71,13 @@ function Report({ user }) {
     []
   );
 
+  const data = React.useMemo(() => cells, [cells]);
+
   useEffect(() => {
     getData();
-  }, []);
+  }, [user]);
 
-  const data = React.useMemo(() => cells, [cells]);
+  
 
   return (
     // <>{!user || user ? "" :
@@ -118,20 +124,16 @@ function Report({ user }) {
             type="submit"
             value="Add report"
             className="submitbtn"
+  
           ></input>
         </form>
-
-
-
-        <div>
-
-        </div>
         <table>
-    
-          
           <tbody>
             <td>
-            <div>{cells && <PaginationTable columns={columns} data={data} />}</div>;
+              <div>
+                {cells && <PaginationTable columns={columns} data={data} />}
+              </div>
+              ;
             </td>
           </tbody>
         </table>
