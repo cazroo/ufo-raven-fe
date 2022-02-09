@@ -1,11 +1,11 @@
-
 import React, { useState, useEffect } from "react";
 import "../App.css";
 // import "./cssPages/events.css"
 //button:
 import "../components/css/buttons.css";
+import FilteringTable from "../components/FilteringTable";
 // import Navbar from '../components/navBar'
-import PaginationTable from "../components/PaginationTable";
+// import PaginationTable from "../components/PaginationTable";
 
 export function Events() {
   const [cells, setCells] = useState([]);
@@ -16,7 +16,7 @@ export function Events() {
       method: "GET",
     });
     const data = await res.json();
-    
+
     setCells(data.data);
   };
 
@@ -44,7 +44,6 @@ export function Events() {
 
   const data = React.useMemo(() => cells, [cells]);
 
- 
   return (
     <div className="wrapper">
       <div className="pageTitle">
@@ -61,7 +60,7 @@ export function Events() {
                     <td>
                       <div>
                         {cells && (
-                          <PaginationTable columns={columns} data={data} />
+                          <FilteringTable columns={columns} data={data} />
                         )}
                       </div>
                       ;

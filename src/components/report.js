@@ -75,66 +75,72 @@ function Report({ user }) {
 
   return (
     // <>{!user || user ? "" :
-    <div className="App">
-      <div className="report">
-        <h1>Report Management</h1>
-        <p className="report">{newReports}</p>
-        <form onSubmit={submitForm}>
-          <label htmlFor="date" className="form">
-            Date:{" "}
-          </label>
-          <input
-            type="datetime-local"
-            name="date"
-            value={date}
-            onChange={handleDate}
-            required={true}
-          ></input>
+    <div className="box1-REPORT-MNGMNT">
+      <div className="ReportApp">
+        <div className="wrapper">
+          <div className="reportBox">
+            <div className="TitleBox">
+              <h1 className="title">REPORT MANAGEMENT</h1>
+            </div>
+            <table className="tableWithUserReports">
+              <tbody className="tbodyReportManagement">
+                <td>
+                  <div>
+                    {cells && <PaginationTable columns={columns} data={data} />}
+                  </div>
+                </td>
+              </tbody>
+            </table>
+            <div className="DescriptionBoxElements">
+              <p>{newReports}</p>
 
-          <label htmlFor="location" className="form">
-            Location:{" "}
-          </label>
-          <input
-            type="text"
-            name="location"
-            value={location}
-            onChange={handleLocation}
-            required={true}
-            placeholder="Enter a location"
-          ></input>
-          <label htmlFor="description" className="form">
-            Description:{" "}
-          </label>
-          <input
-            type="text"
-            name="description"
-            value={description}
-            onChange={handleDescription}
-            required={true}
-            placeholder="Please write a description"
-          ></input>
-          <input
-            style={{ marginBottom: "4rem" }}
-            type="submit"
-            value="Add report"
-            className="submitbtn"
-          ></input>
-        </form>
+              <div className="ReportManagement-Form-Box">
+                <form onSubmit={submitForm}>
+                  <label htmlFor="date" className="form">
+                    Date:{" "}
+                  </label>
+                  <input
+                    type="datetime-local"
+                    name="date"
+                    value={date}
+                    onChange={handleDate}
+                    required={true}
+                  ></input>
 
-
-
-        <div>
-
+                  <label htmlFor="location" className="form">
+                    Location:{" "}
+                  </label>
+                  <input
+                    type="text"
+                    name="location"
+                    value={location}
+                    onChange={handleLocation}
+                    required={true}
+                    placeholder="Enter a location"
+                  ></input>
+                  <label htmlFor="description" className="form">
+                    Description:{" "}
+                  </label>
+                  <input
+                    className="descriptionTextBox"
+                    type="text"
+                    name="description"
+                    value={description}
+                    onChange={handleDescription}
+                    required={true}
+                    placeholder="Please write a description"
+                  ></input>
+                  <input
+                    style={{ marginBottom: "4rem" }}
+                    type="submit"
+                    value="ADD"
+                    className="add-button"
+                  ></input>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-        <table>
-    
-          
-          <tbody>
-            <td>
-            <div>{cells && <PaginationTable columns={columns} data={data} />}</div>;
-            </td>
-          </tbody>
-        </table>
       </div>
     </div>
     // }</>
