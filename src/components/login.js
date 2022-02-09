@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 function Login(props) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  // const [userId, setUserId] = useState("Anything");
 
   const navigation=useNavigate()
 
@@ -32,6 +33,11 @@ function Login(props) {
         id: data.user.id, 
         jwt: data.token
       });
+
+      // setUserId("sometho")
+      // console.log(data.user.id)
+      // console.log(`!!!!!!!!!!!!!!!!!!!!!, ${userId}`)
+
       props.setOpen(false)
       alert("Logged in!");
       navigation('/report')
