@@ -8,7 +8,7 @@ import { LoginModal } from "./components/modal";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { useState } from "react";
 import Report from "./components/report";
-
+import Maap from "./components/map";
 function App() {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -31,8 +31,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dates" element={<Dates />} />
-          <Route path="/locations" element={<Locations />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/locations" element={<Locations />}/>
           <Route path="/report" element={<Report user={user} />} />
         </Routes>
       </BrowserRouter>

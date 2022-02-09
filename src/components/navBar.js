@@ -13,49 +13,33 @@ export const NavBar = (props) => {
 
     return (
         <nav>
-            <div id="navBar">
-                <li id="navBarList">
-                    <div id="navContent">
-                        <Link to="/">
-                            <button className="navButton">
-                                LOGO
-                            </button>
-                        </Link>
-                        <separator/>
-                        <Link to="/events">
-                            <button className="navButton">
-                                EVENTS
-                            </button>
-                        </Link>
-                        <separator/>
-                        <Link to="/dates">
-                            <button className="navButton">
-                                DATES
-                            </button>
-                        </Link>
-                        <separator/>
-                        <Link to="/locations">
-                            <button className="navButton">
-                                LOCATIONS
-                            </button>
-                        </Link>
-                    </div>
-                    <div id="navContent">
-                    {props.user ? 
-                    console.log(props.user.username) : null}
-                    {props.user ?
+            <div className="navbar">
+                <Link to="/">
+                    {/* <image src={requestAnimationFrame('../../Images/logo.svg')} /> */}
+                </Link>
+                <li className="nav-links">
+                    <Link to="/events">
+                        <button className="events"> EVENTS </button>
+                    </Link>
+                    <Link to="/dates">
+                        <button className="dates"> DATES </button>
+                    </Link>
+                    <Link to="/locations">                            
+                        <button className="locations"> LOCATIONS </button>
+                    </Link>
                         <div id="navContent">
-                            <Link to="/report">
-                            <button className="navButton">
-                                    REPORT MANAGEMENT
-                                </button>
-                            </Link>
-                            <separator/>
+                        {props.user ? 
+                        console.log(props.user.username) : null}
+                        {props.user ?
+                            <div id="navContent">
+                                <Link to="/report">
+                                    <button className="report"> REPORT MANAGEMENT </button>
+                                </Link>
                             <button className="navButton" onClick={() => logout()}>LOGOUT</button>
                         </div>
                         :
-                        <button className="navButton" onClick={() => props.setOpen(true)}>
-                            LOGIN
+                        <button className="login" onClick={() => props.setOpen(true)}>
+                            Login or Register
                         </button>
                     }
                     </div>
@@ -64,3 +48,4 @@ export const NavBar = (props) => {
         </nav>
     )
 }
+

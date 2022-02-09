@@ -1,52 +1,93 @@
-/* 
-GOOGLE FONTS
-
-font-family: 'Andada Pro', serif;
-font-family: 'Archivo', sans-serif;
-font-family: 'Epilogue', sans-serif;
-font-family: 'Hahmlet', serif;
-font-family: 'Nunito Sans', sans-serif;
-font-family: 'Poppins', sans-serif;
-font-family: 'Josefin Sans', sans-serif;*/
-
-@import url("https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;0,600;0,800;1,400&family=Archivo:ital,wght@0,100;0,800;1,100&family=Epilogue:wght@100;200;300;400;600;900&family=Hahmlet:wght@100;200;700;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,500&family=Nunito+Sans:ital,wght@0,200;0,400;1,400&family=Poppins:ital,wght@0,200;0,300;0,600;0,800;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap');
 
 body {
   margin: 0;
-  font-family: "Archivo", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
 }
 
-body {
-  background-image: url(./components/Images/jake-weirick-star\ wallpaper.jpg);
-  background-size: 80%;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
-h1 {
-  font-family: "Josefin Sans", sans-serif;
+.locationTitle {
+  color: #fca311;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 60px;
+  text-align: left;
+  margin-left: 0%;
+  padding-left: 0%;
+  padding-top: 7%;
+  padding-right: 1300px;
+
 }
 
-/* TABLE PAGES */
+.locationIntro {
+  color: #E5E5E5;
+  font-family: 'Share Tech Mono', monospace;
+  padding-top: 100px;
+  padding-left: 50px;
+  font-size: 30px;
 
-.tablebox {
-  display: flex;
-  justify-content: flex-start;
 }
 
-.pageTitle {
-  color: rgb(249, 243, 243);
+h2 {
+  position: absolute;
+  font-size: 40px;
+  top: 16.5rem;
+  left: 62rem;
+  color: #281414;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
 }
 
-.ufoReportsHeader {
-  color: black;
-  margin-top: -10px;
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 9600px;
+  padding: 0%;
+  height: 3000px;
 }
 
+.search {
+  position: absolute;
+  top: 17rem;
+  left: 80%;
+  transform: translateX(-50%);
+  width: 50%;
+  max-width: 300px;
+  z-index: 10;
+}
 
-.tablebox {
-  background-color: rgba(160, 152, 152, 0.616);
-  width: 700px;
-  display: flex;
-  margin-top: -24px;
+.search input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.locate {
+  position: absolute;
+  top: 17rem;
+  right: 7rem;
+  background: none;
+  border: none;
+  z-index: 1;
+}
+.locate img {
+  width: 50px;
+  cursor: pointer;
+}
+
+#map {
+  position: absolute;
+  top: 15rem;
+  left: 60rem;
 }

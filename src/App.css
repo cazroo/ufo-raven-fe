@@ -16,7 +16,7 @@ body {
   font-family: "Archivo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./components/Images/jake-weirick-star\ wallpaper.jpg);
+  background-image: url(./components/Images/twinkleStarBackground.gif);
   background-size: 80%;
   background-attachment: fixed;
 }
