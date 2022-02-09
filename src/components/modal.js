@@ -12,29 +12,6 @@ export const LoginModal = (props) => {
         const tempRoute = modalRoute
         setModalRoute(!tempRoute);
     }
-    
-    return (
-        <div>
-            <Modal
-                open={props.open}
-                onClose={() => props.setOpen(false)}
-                center
-                classNames={{
-                    overlay: 'customOverlay',
-                    modal: 'customModal',
-                }}
-            >
-                {props.user ? 
-                    console.log("") : null}
-
-                {modalRoute ?
-                    <Register/> :
-                    <Login 
-                    user={props.user} 
-                    setUser={props.setUser}
-                    setOpen={props.setOpen}
-                    />
-                }
 
   return (
     <div>
