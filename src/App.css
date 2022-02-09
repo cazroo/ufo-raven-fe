@@ -21,7 +21,6 @@ body {
   background-attachment: fixed;
 }
 
-
 label {
   color: white;
 }
@@ -40,15 +39,15 @@ h1 {
 
 button {
   background-color: black;
-  color:white;
+  color: white;
   border: none;
-  margin:0px 4px 0px 4px;
+  margin: 0px 4px 0px 4px;
   height: 100%;
 }
 
 .submitbtn {
   background-color: black;
-  color:white;
+  color: white;
   border: none;
 }
 
@@ -67,16 +66,134 @@ button {
 
   border-top: 10px;
   border-bottom: 10px;
-  
   width: 100%;
-  margin-top: 100px;
+  margin-top: 40px;
   padding-bottom: 21px;
   display: flex;
   justify-content: center;
 }
 
 .tablebox {
-  background-color: rgba(160, 152, 152, 0.596);
+  background-color: rgba(160, 152, 152, 0);
   width: 700px;
+}
+
+/*___REPORT_MANAGEMENT_________________________________________________________ */
+
+.TitleBox {
+  background-color: rgba(137, 43, 226, 0);
+  width: 100%;
   display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: white;
+  text-decoration: #12d3ba;
+  /* border-top-style: solid; */
+  border-bottom-style: solid;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.reportApp {
+  display: flex;
+  justify-content: center;
+}
+
+.reportBox {
+  margin-top: 60px;
+  background-color: rgba(125, 125, 125, 0.68);
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wapper {
+  width: 100%;
+  background-color: rgb(247, 214, 27);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.DescriptionBoxElements {
+  background-color: rgba(255, 127, 80, 0);
+}
+
+.ReportManagement-Form-Box {
+  display: flex;
+  color: red;
+  width: 50%;
+  /* margin top and left temporary solution to center report submit form */
+  margin-top: 50px;
+  margin-left: 280px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReportManagement-Form-Box button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.descriptionTextBox {
+  width: 600px;
+  height: 150px;
+}
+
+.tableWithUserReports {
+  width: 50%;
+  height: 90px;
+  margin-left: 25%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  background-color: rgba(130, 130, 130, 0);
+}
+
+thead,
+tbody {
+  display: block;
+  width: 100%;
+}
+
+.tbodyReportManagement {
+  height: 300px;
+  overflow-y: auto; /* Trigger vertical scroll    */
+  overflow-x: hidden; /* Hide the horizontal scroll */
+}
+
+/* ADD WRITTEN BUTTON */
+.add-button {
+  margin-left: 290px;
+  width: 45px;
+  height: 30px;
+  border-radius: 0%;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.add-button {
+  background: #12d3ba;
+  border: 4px solid #000000;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+}
+
+/*LOGIN BUTTON */
+
+/* get rid of switch button background so it has less attention as the submit button , or less wide */
+button #switch {
+  width: 20px;
 }

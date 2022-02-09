@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // // import React from "react";
-import PaginationTable from "./PaginationTable";
+import PaginationTable from "./Table components/PaginationTable";
 import "./css/report.css";
 
 function Report({ user }) {

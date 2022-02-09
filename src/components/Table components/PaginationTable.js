@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/paginationTable.css";
+import "../css/paginationTable.css";
 
 import { useTable, usePagination } from "react-table";
 
@@ -55,10 +55,7 @@ export default function PaginationTable({ columns, data }) {
                     <tr {...row.getRowProps()}>
                       {row.cells.map((cell) => {
                         return (
-                          <td
-                            {...cell.getCellProps()}
-                            className="px-6 py-4 whitespace-nowrap"
-                          >
+                          <td {...cell.getCellProps()}>
                             {cell.render("Cell")}
                           </td>
                         );
