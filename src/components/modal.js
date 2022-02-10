@@ -7,11 +7,11 @@ import { default as Login } from "./login";
 import Register from "./register";
 
 export const LoginModal = (props) => {
-  const [modalRoute, setModalRoute] = useState(false);
-  const handleClick = () => {
-    const tempRoute = modalRoute;
-    setModalRoute(!tempRoute);
-  };
+    const [modalRoute, setModalRoute] = useState(false);
+    const handleClick = () => {
+        const tempRoute = modalRoute
+        setModalRoute(!tempRoute);
+    }
 
   return (
     <div>
