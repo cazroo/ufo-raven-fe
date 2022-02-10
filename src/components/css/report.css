@@ -53,3 +53,23 @@
   color:rgb(238, 227, 227);
   padding: 5px;
 }
+
+@import "react-slideshow-image/dist/styles.css";
+
+ /* .slideshow-container {
+  width: 484px;
+  height: 484px;
+  border-style: solid;
+  position: fixed;
+} */
+
+.container-slide {
+  width: 600px;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.container-slide img {
+  height: 490px;
+  margin: auto;
+}
