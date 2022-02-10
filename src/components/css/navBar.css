@@ -11,7 +11,7 @@
     justify-content: space-around;
     align-items: center;
     height: 100px;
-    background-color: rgba(var(--global-primary-colour), 0.4);
+    background-color: rgba(var(--global-primary-colour));
 }
 
 .logo {
@@ -29,11 +29,13 @@
 .navButton {
     background-color: rgba(var(--global-primary-colour), 0.4);
     height:100%;
+    border:solid 2px blue;
     padding: 0px 10px 0px 10px;
 }
 
 .navButton:hover {
     transition: all 0.2s ease-in-out;
+    border:solid 2px  rgb(var(--global-tertiary-colour));
     background-color: rgba(var(--global-secondary-colour), 0.4);
     color: rgb(var(--global-tertiary-colour));
     text-decoration: underline;

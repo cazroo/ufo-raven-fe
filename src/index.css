@@ -18,6 +18,11 @@ body {
   font-size: 18px;
 }
 
+href {
+  color: purple;
+  text-decoration: underline;     
+}
+
 .locationTitle {
   color: rgb(var(--global-tertiary-colour));
   text-decoration: underline;
