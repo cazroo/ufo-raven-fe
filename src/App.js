@@ -1,7 +1,7 @@
 import React from "react";
 import { Home } from "./pages/home";
 import { Events } from "./pages/events";
-import { Dates } from "./pages/dates";
+import Dates from "./pages/dates";
 import { Locations } from "./pages/locations";
 import { NavBar } from "./components/navBar";
 import { LoginModal } from "./components/modal";
