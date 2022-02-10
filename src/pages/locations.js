@@ -1,36 +1,39 @@
-import "../index.css"
-import Maap from "../components/map"
+import "../index.css";
+import Maap from "../components/map";
+import { useNavigate } from "react-router-dom";
 
 export const Locations = () => {
+  const navigation = useNavigate();
   return (
-      <div className="wrapper">
+    <div className="locationWrapper">
+      <div className="boxOne">
         <div>
           <h1 className="locationTitle">Locations</h1>
-          <div>
-            <p className="locationIntro">
-              Welcome to the location page 
-              <br/>
-              <br/>
-              <br/>
-              Do you have a favourite place or location
-              <br/>
-              for UFO spotting?
-              <br/> 
-              Feel free to share by clicking onto the 
-              <br/>
-              map!
-              <br/>
-              <br/>
-              <br/>
-              Or check out the table below to see 
-              <br/>
-              archived reports and user reports.
-            </p>
+          <div id="p1">
+            <p>
+              Do you have a favourite place or location <br />
+              for UFO spotting?{" "}
+            </p>{" "}
           </div>
-              <div>
-                <Maap/>
-              </div>
-          </div>
+          <p>
+            Feel free to share by clicking onto the <br />
+            map!
+          </p>{" "}
+          <div id="p1cursive"></div>
+          <p>
+            {" "}
+            Or check out the table{" "}
+            <span class="inlineLink" onClick={() => navigation("/events")}>
+              {" "}
+              here{" "}
+            </span>
+            to see archived reports and user reports.{" "}
+          </p>
         </div>
-  )
+        <div className="mapMap">
+          <Maap />
+        </div>
+      </div>
+    </div>
+  );
 };

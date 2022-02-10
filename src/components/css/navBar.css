@@ -1,65 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* .navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background-color: rgba(var(--global-primary-colour));
+} */
+
+/* dons thin one, not rdy yet*/
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100px;
-    background-color: rgba(var(--global-primary-colour));
+  margin-top: 9px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10px;
+  background-color: rgba(var(--global-primary-colour));
 }
 
 .logo {
-    font-size: 30px;
-    background-color: rgba(var(--global-primary-colour), 0.4);
+  font-size: 30px;
+  background-color: rgba(var(--global-primary-colour), 0.4);
 }
 
 .nav-links {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    height:60%
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 60%;
 }
 
 .navButton {
-    background-color: rgba(var(--global-primary-colour), 0.4);
-    height:100%;
-    border:solid 2px blue;
-    padding: 0px 10px 0px 10px;
+  background-color: rgba(var(--global-primary-colour), 0.4);
+  height: 100%;
+  border: solid 2px blue;
+  padding: 0px 10px 0px 10px;
 }
 
 .navButton:hover {
-    transition: all 0.2s ease-in-out;
-    border:solid 2px  rgb(var(--global-tertiary-colour));
-    background-color: rgba(var(--global-secondary-colour), 0.4);
-    color: rgb(var(--global-tertiary-colour));
-    text-decoration: underline;
+  transition: all 0.2s ease-in-out;
+  border: solid 2px rgb(var(--global-tertiary-colour));
+  background-color: rgba(var(--global-secondary-colour), 0.4);
+  color: rgb(var(--global-tertiary-colour));
+  text-decoration: underline;
 }
 
 .button {
-    color: #202060;
+  color: #202060;
 }
 
 /* ~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~ */
 
-#footbar{
-
-    align-items: center;
-    display: flex;
-    background: #202060;
-    font-family: 'Montserrat', sans-serif;
-    word-wrap: normal;
-    width: 100%;
-    height: 30px;
-    border: transparent;
-    margin-top: 100%;
-    position: absolute;
-    bottom:1px;
-
+#footbar {
+  align-items: center;
+  display: flex;
+  background: #202060;
+  font-family: "Montserrat", sans-serif;
+  word-wrap: normal;
+  width: 100%;
+  height: 30px;
+  border: transparent;
+  margin-top: 100%;
+  position: absolute;
+  bottom: 1px;
 }
-
