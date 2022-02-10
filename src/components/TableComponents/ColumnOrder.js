@@ -38,7 +38,7 @@ export default function ColumnOrder({ columns, data }) {
   );
 
   const changeOrder = () => {
-    setColumnOrder(["description", "date", "location.name"]);
+    setColumnOrder(["date", "location.name", "description"]);
   };
 
   const { globalFilter } = state;
