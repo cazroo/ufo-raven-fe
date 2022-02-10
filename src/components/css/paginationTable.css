@@ -11,5 +11,5 @@ tbody tr:nth-child(even) {
 }
 
 table {
-  background-color: #49ffd53f;
+  background-color: rgba(var(--global-secondary-colour), 0.4);
 }

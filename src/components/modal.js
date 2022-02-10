@@ -35,9 +35,9 @@ export const LoginModal = (props) => {
           />
         )}
 
-        <button id="switch" onClick={() => handleClick()}>
+        <href onClick={() => handleClick()}>
           {modalRoute ? "Or Login" : "or Register"}
-        </button>
+        </href>
       </Modal>
     </div>
   );

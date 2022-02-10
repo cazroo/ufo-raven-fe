@@ -1,19 +1,9 @@
-/* 
-GOOGLE FONTS
 
-font-family: 'Andada Pro', serif;
-font-family: 'Archivo', sans-serif;
-font-family: 'Epilogue', sans-serif;
-font-family: 'Hahmlet', serif;
-font-family: 'Nunito Sans', sans-serif;
-font-family: 'Poppins', sans-serif;
-font-family: 'Josefin Sans', sans-serif;*/
 
 @import url("https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;0,600;0,800;1,400&family=Archivo:ital,wght@0,100;0,800;1,100&family=Epilogue:wght@100;200;300;400;600;900&family=Hahmlet:wght@100;200;700;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,500&family=Nunito+Sans:ital,wght@0,200;0,400;1,400&family=Poppins:ital,wght@0,200;0,300;0,600;0,800;1,300&display=swap");
 
 body {
   margin: 0;
-  font-family: "Archivo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./components/Images/twinkleStarBackground.gif);
@@ -25,9 +15,6 @@ label {
   color: white;
 }
 
-h1 {
-  font-family: "Josefin Sans", sans-serif;
-}
 
 /* TABLE PAGES */
 
@@ -43,12 +30,26 @@ button {
   border: none;
   margin: 0px 4px 0px 4px;
   height: 100%;
+  transition: all 0.2s ease-in-out;
 }
 
+button:hover {
+  background-color: rgb(var(--global-primary-colour));
+  color: rgb(var(--global-tertiary-colour));
+}
 .submitbtn {
   background-color: black;
   color: white;
   border: none;
+  margin-top: 10px;
+  height: 30px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.submitbtn:hover {
+  background-color: rgb(var(--global-primary-colour));
+  color: rgb(var(--global-tertiary-colour));
 }
 
 .pageTitle {
@@ -113,7 +114,7 @@ button {
 
 /* .wapper {
   width: 100%;
-  background-color: rgb(247, 214, 27);
+  background-color: rgb(var(--global-tertiary-colour));
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -179,7 +180,6 @@ tbody {
   position: relative;
   overflow: hidden;
   color: white;
-  font-family: "Josefin Sans", sans-serif;
 }
 
 .add-button {

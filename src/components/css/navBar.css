@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
-    font-family: 'Bebas Neue', cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,67 +11,34 @@
     justify-content: space-around;
     align-items: center;
     height: 100px;
-    background-color: #202060;
-    color: white;
+    background-color: rgba(var(--global-primary-colour));
 }
 
 .logo {
     font-size: 30px;
-    background-color: #202060;
+    background-color: rgba(var(--global-primary-colour), 0.4);
 }
 
 .nav-links {
     display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    width: 75%
+    justify-content: space-between;
+    width: 90%;
+    height:60%
 }
 
-.events,
-.dates,
-.locations,
-.report {
-    text-decoration: none;
-    color: white;
-    background-color: #202060;
-    font-size: 40px;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
+.navButton {
+    background-color: rgba(var(--global-primary-colour), 0.4);
+    height:100%;
+    border:solid 2px blue;
+    padding: 0px 10px 0px 10px;
 }
 
-.events:hover {
+.navButton:hover {
     transition: all 0.2s ease-in-out;
-    background: #202060;
-    color: #fca311;
+    border:solid 2px  rgb(var(--global-tertiary-colour));
+    background-color: rgba(var(--global-secondary-colour), 0.4);
+    color: rgb(var(--global-tertiary-colour));
     text-decoration: underline;
-}
-.dates:hover {
-    transition: all 0.2s ease-in-out;
-    background: #202060;
-    color: #fca311;
-    text-decoration: underline;
-}
-.locations:hover {
-    transition: all 0.2s ease-in-out;
-    background: #202060;
-    color: #fca311;
-    text-decoration: underline;
-}
-.login {
-    background-color: #fca311;
-    border: 10px solid #fca311;
-    border-radius: 13px;
-    font-size: 25px;
-    padding-bottom: 27px;
-    color: #008037;
-}
-
-.login:hover {
-    transition: all 0.2s ease-in-out;
-    background: white;
-    color: rgb(160, 3, 3);
-    border: 10px solid white;
 }
 
 .button {
@@ -96,3 +62,4 @@
     bottom:1px;
 
 }
+

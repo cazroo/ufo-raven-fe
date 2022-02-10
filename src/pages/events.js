@@ -55,7 +55,6 @@ export function Events() {
         <h1>EVENTS</h1>
         <div className="tablebox">
           <div className="ufoReportsHeader">
-            <h2>U.F.O REPORT</h2>
             <div className="table">
               <div>
                 <table>
