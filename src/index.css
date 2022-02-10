@@ -1,59 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap');
-
-
-:root {
-  --global-primary-colour:30, 96, 145;
-  --global-secondary-colour:82, 182, 154;
-  --global-tertiary-colour:252, 163, 17;
-
-  --font-primary-colour:white;
-  --font-inverted-colour:black;
+/* dons thin one, not rdy yet, be placed in navbar if we wanna use it*/
+/* .navbar {
+  margin-top: 9px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10px;
+  background-color: rgba(var(--global-primary-colour));
 }
+*/
 
-body {
+.locationWrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 0, 0);
   margin: 0;
-  font-family: "Titillium Web", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 18px;
+  height: 100vh;
 }
 
-href {
-  color: purple;
-  text-decoration: underline;     
+.boxOne p {
+  margin-top: 57px;
+  color: white;
+  font-size: 1.2rem;
+  width: 30vw;
+}
+
+#p1 {
+  font-weight: bold;
+}
+
+#p1cursive {
+  font-style: italic;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+} */
+
+:root {
+  --global-primary-colour: 30, 96, 145;
+  --global-secondary-colour: 82, 182, 154;
+  --global-tertiary-colour: 252, 163, 17;
+
+  --font-primary-colour: white;
+  --font-inverted-colour: black;
+}
+
+.boxOne {
+  background-color: #ffc0cb00;
+  margin-left: 150px;
+  display: flex;
+  margin-left: 120px;
 }
 
 .locationTitle {
-  color: rgb(var(--global-tertiary-colour));
-  text-decoration: underline;
+  /* color: #79bdd0; */
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  /* font-family: "Orbitron", sans-serif; */
   font-style: italic;
   font-size: 60px;
   text-align: left;
-  margin-left: 0%;
-  padding-left: 0%;
-  padding-top: 7%;
-  padding-right: 1300px;
-
+  margin-top: 49px;
 }
 
-.locationIntro {
-  color: #E5E5E5;
-
-  padding-top: 100px;
-  padding-left: 50px;
-  font-size: 30px;
-
+.inlineLink {
+  font-style: italic;
+  color: #79bdd0;
 }
+
+.inlineLink:hover {
+  font-style: italic;
+  text-decoration: underline;
+  color: #bbb280;
+}
+
+/* .wrapper {
+  width: 100%;
+} */
 
 h2 {
   position: absolute;
-  font-size: 40px;
-  top: 16.5rem;
-  left: 62rem;
-  color: #281414;
+  font-size: 1rem;
+  top: 197px;
+  left: 550px;
+  color: #ffffff;
   z-index: 10;
   margin: 0;
   padding: 0;
+  font-family: "Kanit", sans-serif;
+}
+.mapMap {
+  margin-top: -200px;
 }
 
 .wrapper {
@@ -61,13 +105,13 @@ h2 {
   margin-left: auto;
   max-width: 9600px;
   padding: 0%;
-  /* height: 3000px; */
+  height: 3000px;
 }
 
 .search {
   position: absolute;
-  top: 17rem;
-  left: 80%;
+  top: 200px;
+  left: 830px;
   transform: translateX(-50%);
   width: 50%;
   max-width: 300px;
@@ -78,8 +122,8 @@ h2 {
   padding: 0.5rem;
   font-size: 1.5rem;
   width: 100%;
+  padding-bottom: 10px;
 }
-
 
 .locate {
   position: absolute;
@@ -96,6 +140,20 @@ h2 {
 
 #map {
   position: absolute;
-  top: 15rem;
-  left: 60rem;
+  top: 270px;
+  left: 548px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container-map {
+  box-sizing: initial;
 }
