@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
-// import ColumnOrder from "../components/Table components/ColumnOrder";
-// import FilteringTable from "../components/TableComponents/FilteringTable";
+import EventPageTable from "../components/TableComponents/EventPageTable";
 
 import { format } from "date-fns";
-import ColumnOrder from "../components/TableComponents/ColumnOrder";
 
 export function Events() {
   const [cells, setCells] = useState([]);
@@ -49,7 +47,7 @@ export function Events() {
   return (
     <div className="wrapper">
       <div className="pageTitle">
-        <h1>EVENTS</h1>
+        <h1 className="locationTitle">EVENTS</h1>
         <div className="tablebox">
           <div className="ufoReportsHeader">
             <div className="table">
@@ -59,8 +57,10 @@ export function Events() {
 
                   <tbody>
                     <td>
-                      <div>
-                        {cells && <ColumnOrder columns={columns} data={data} />}
+                      <div className="tableDiv">
+                        {cells && (
+                          <EventPageTable columns={columns} data={data} />
+                        )}
                       </div>
                     </td>
                   </tbody>
