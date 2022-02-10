@@ -8,7 +8,7 @@ function Report({ user }) {
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
 
-  const [newReports, setNewReports] = useState([]);
+  // const [newReports, setNewReports] = useState([]);
   const [cells, setCells] = useState([]);
 
   const handleDate = (e) => setDate(e.target.value);
@@ -24,9 +24,9 @@ function Report({ user }) {
       userId: user.id,
     });
 
-    let copy = [...newReports];
-    copy.push(payload);
-    setNewReports(copy);
+    // let copy = [...newReports];
+    // copy.push(payload);
+    // setNewReports(copy);
 
     const res = await fetch(`${process.env.REACT_APP_BASE_URL}/location`, {
       method: "POST",
@@ -54,6 +54,12 @@ function Report({ user }) {
     setCells(data[0].reports);
   };
 
+  // const removeHandler = (index) => {
+  //   const newArray = [...cells];
+  //   newArray.splice(row.index, 1);
+  //   setCells(newArray);
+  // };
+
   const columns = React.useMemo(
     () => [
       {
@@ -68,8 +74,42 @@ function Report({ user }) {
         Header: "Description",
         accessor: "description",
       },
+      {
+        Header: "Button",
+        id: "delete",
+        accessor: (str) => "delete",
+
+        Cell: (tableProps) => (
+          <span
+            style={{
+              cursor: "pointer",
+              color: "blue",
+              textDecoration: "underline",
+            }}
+            onClick={() => {
+              const dataCopy = [...cells];
+              dataCopy.splice(tableProps.row.index, 1);
+              setCells(dataCopy);
+              let difference = cells.filter((x) => !dataCopy.includes(x));
+              const Deleteid = async () => {
+                const reportDel = fetch(
+                  `${process.env.REACT_APP_BASE_URL}/report/${difference[0].id}`,
+                  {
+                    mode: "cors",
+                    method: "DELETE",
+                  }
+                );
+                console.log(reportDel);
+              };
+              Deleteid();
+            }}
+          >
+            Delete
+          </span>
+        ),
+      },
     ],
-    []
+    [cells]
   );
 
   const data = React.useMemo(() => cells, [cells]);
@@ -77,13 +117,14 @@ function Report({ user }) {
   useEffect(() => {
     getData(user);
   });
+ 
 
   return (
     // <>{!user || user ? "" :
     <div className="App">
       <div className="report">
         <h1>Report Management</h1>
-        <p className="report">{newReports}</p>
+        {/* <p className="report">{newReports}</p> */}
         <form onSubmit={submitForm}>
           <label htmlFor="date" className="form">
             Date:{" "}
@@ -131,7 +172,6 @@ function Report({ user }) {
               <div>
                 {cells && <PaginationTable columns={columns} data={data} />}
               </div>
-              ;
             </td>
           </tbody>
         </table>
