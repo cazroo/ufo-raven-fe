@@ -19,7 +19,7 @@ export default function PaginationTable({ columns, data }) {
     {
       columns,
       data,
-      initialState: { pageSize: 7 }, // number of objects displayed
+      initialState: { pageSize: 3 }, // number of objects displayed
     },
     usePagination
   );
@@ -67,10 +67,10 @@ export default function PaginationTable({ columns, data }) {
                 })}
               </tbody>
             </table>
-            <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+            <button className="pagination_button" onClick={() => previousPage()} disabled={!canPreviousPage}>
               Previous page{" "}
             </button>
-            <button onClick={() => nextPage()} disabled={!canNextPage}>
+            <button className="pagination_button" onClick={() => nextPage()} disabled={!canNextPage}>
               Next page{" "}
             </button>
           </div>

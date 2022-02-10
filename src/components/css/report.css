@@ -1,11 +1,55 @@
-.report {
-    color: white;
-    background-color: black;
-    margin-top: 200px;
-  }
-  
-.test {
+
+.report_title {
+  margin-top: -20px;
+  padding-bottom: 30px;
+}
+
+.report_table {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}
+
+/* .report_report {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30%;
+  background-color: tomato;
+} */
+
+.report_table_body {
+  display: flex;
   justify-content: center;
+  text-align: center;
+  width: 700px;
+  font-size: 1.6rem;
+}
+
+.report_button {
+  padding: 5px;
+  margin: 10px 100px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  background-color: rgb(44, 39, 39);
+}
+
+.report_button:hover {
+  background-color: rgb(66, 60, 60);
+}
+
+
+.report_form {
+  display: flex;
+  flex-direction: column;
+  /* background-color: yellow; */
+  width: 300px;
+  margin: auto;
+  font-size: 1.4rem;
+  margin-bottom: -45px;
+}
+
+.report_text {
+  color:rgb(238, 227, 227);
+  padding: 5px;
 }

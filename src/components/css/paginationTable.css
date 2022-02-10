@@ -13,3 +13,15 @@ tbody tr:nth-child(even) {
 table {
   background-color: rgba(var(--global-secondary-colour), 0.4);
 }
+
+.pagination_button {
+  padding: 5px;
+  margin: 10px 10px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  background-color: rgb(44, 39, 39);
+}
+
+.pagination_button:hover {
+  background-color: rgb(66, 60, 60);
+}

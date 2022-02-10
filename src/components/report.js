@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-// // import React from "react";
 import PaginationTable from "./TableComponents/PaginationTable";
-import "./css/report.css";
+import "../App.css";
+import "../components/css/report.css";
 
 function Report({ user }) {
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
 
-  // const [newReports, setNewReports] = useState([]);
   const [cells, setCells] = useState([]);
 
   const handleDate = (e) => setDate(e.target.value);
@@ -23,10 +22,6 @@ function Report({ user }) {
       description: description,
       userId: user.id,
     });
-
-    // let copy = [...newReports];
-    // copy.push(payload);
-    // setNewReports(copy);
 
     const res = await fetch(`${process.env.REACT_APP_BASE_URL}/location`, {
       method: "POST",
@@ -50,15 +45,8 @@ function Report({ user }) {
     );
 
     const data = await reportRes.json();
-    console.log(data[0].reports);
     setCells(data[0].reports);
   };
-
-  // const removeHandler = (index) => {
-  //   const newArray = [...cells];
-  //   newArray.splice(row.index, 1);
-  //   setCells(newArray);
-  // };
 
   const columns = React.useMemo(
     () => [
@@ -83,7 +71,7 @@ function Report({ user }) {
           <span
             style={{
               cursor: "pointer",
-              color: "blue",
+              color: "rgb(139, 45, 45)",
               textDecoration: "underline",
             }}
             onClick={() => {
@@ -92,7 +80,7 @@ function Report({ user }) {
               setCells(dataCopy);
               let difference = cells.filter((x) => !dataCopy.includes(x));
               const Deleteid = async () => {
-                const reportDel = fetch(
+                const reportDel = await fetch(
                   `${process.env.REACT_APP_BASE_URL}/report/${difference[0].id}`,
                   {
                     mode: "cors",
@@ -116,17 +104,16 @@ function Report({ user }) {
 
   useEffect(() => {
     getData(user);
-  });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
  
 
   return (
     // <>{!user || user ? "" :
-    <div className="App">
-      <div className="report">
-        <h1>Report Management</h1>
-        {/* <p className="report">{newReports}</p> */}
-        <form onSubmit={submitForm}>
-          <label htmlFor="date" className="form">
+    <div className="wrapper">  
+      <div className="pageTitle report_table">
+        <h1 className="report_title">Create your own report</h1>
+        <form onSubmit={submitForm} className="report_form">
+          <label htmlFor="date" className="form report_text">
             Date:{" "}
           </label>
           <input
@@ -137,7 +124,7 @@ function Report({ user }) {
             required={true}
           ></input>
 
-          <label htmlFor="location" className="form">
+          <label htmlFor="location" className="form report_text">
             Location:{" "}
           </label>
           <input
@@ -148,7 +135,7 @@ function Report({ user }) {
             required={true}
             placeholder="Enter a location"
           ></input>
-          <label htmlFor="description" className="form">
+          <label htmlFor="description" className="form report_text">
             Description:{" "}
           </label>
           <input
@@ -157,19 +144,19 @@ function Report({ user }) {
             value={description}
             onChange={handleDescription}
             required={true}
-            placeholder="Please write a description"
+            placeholder="Enter a description"
           ></input>
           <input
             style={{ marginBottom: "4rem" }}
             type="submit"
             value="Add report"
-            className="submitbtn"
+            className="submitbtn report_button"
           ></input>
         </form>
-        <table>
+        <table className="tablebox report_report">
           <tbody>
             <td>
-              <div>
+              <div className="report_table_body">
                 {cells && <PaginationTable columns={columns} data={data} />}
               </div>
             </td>
