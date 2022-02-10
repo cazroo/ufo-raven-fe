@@ -24,7 +24,7 @@
 }
 
 .boxOne p {
-  margin-top: 57px;
+  margin-top: 130px;
   color: white;
   font-size: 1.2rem;
   width: 30vw;
@@ -54,9 +54,8 @@
 
 .boxOne {
   background-color: #ffc0cb00;
-  margin-left: 150px;
+  margin-left: 250px;
   display: flex;
-  margin-left: 120px;
 }
 
 .locationTitle {

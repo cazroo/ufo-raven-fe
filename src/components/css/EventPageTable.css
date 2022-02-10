@@ -1,0 +1,71 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+tbody tr:nth-child(odd) {
+  background-color: #d7d7d775;
+  height: 38px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #a2a2a270;
+  height: 38px;
+}
+
+table {
+  background-color: rgba(var(--global-secondary-colour), 0.4);
+  width: 100%;
+}
+
+.tableDiv {
+  margin-top: 20px;
+  width: 700px;
+}
+
+.EventPageButton {
+  padding: 5px;
+  margin: 3px 10px;
+  font-size: 1.2rem;
+  background-color: rgba(165, 42, 42, 0);
+}
+
+.EventPageButton:hover {
+  color: black;
+  background-color: rgba(165, 42, 42, 0);
+}
+
+/* column headers divide / only way i could manipulate this i found  */
+.th {
+  padding-left: 83px;
+  padding-right: 83px;
+}
+
+.pageTitle {
+  margin-top: -60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.locationTitle {
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.SearchBox {
+  height: 30px;
+  width: 170px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+.searchBoxTitle {
+  font-weight: bolder;
+  height: 50px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  width: 170px;
+  background-color: black;
+  color: white;
+}

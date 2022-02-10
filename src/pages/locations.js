@@ -10,15 +10,9 @@ export const Locations = () => {
         <div>
           <h1 className="locationTitle">Locations</h1>
           <div id="p1">
-            <p>
-              Do you have a favourite place or location <br />
-              for UFO spotting?{" "}
-            </p>{" "}
+            <p>Do you have a favourite place or location for UFO spotting? </p>{" "}
           </div>
-          <p>
-            Feel free to share by clicking onto the <br />
-            map!
-          </p>{" "}
+          <p>Feel free to share by clicking onto the map!</p>{" "}
           <div id="p1cursive"></div>
           <p>
             {" "}

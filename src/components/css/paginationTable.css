@@ -1,5 +1,5 @@
-/* @tailwind base; 
-@tailwind components; 
+/* @tailwind base;
+@tailwind components;
 @tailwind utilities; */
 
 tbody tr:nth-child(odd) {
@@ -17,11 +17,11 @@ table {
 .pagination_button {
   padding: 5px;
   margin: 10px 10px;
-  border-radius: 30px;
   font-size: 1.2rem;
-  background-color: rgb(44, 39, 39);
+  background-color: rgba(240, 248, 255, 0);
 }
 
 .pagination_button:hover {
-  background-color: rgb(66, 60, 60);
+  color: black;
+  background-color: rgba(240, 248, 255, 0);
 }
