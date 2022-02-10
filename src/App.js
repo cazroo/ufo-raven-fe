@@ -8,7 +8,6 @@ import { LoginModal } from "./components/modal";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Report from "./components/report";
-import Maap from "./components/map";
 import Footer from "./components/footer";
 function App() {
   const [open, setOpen] = useState(false);

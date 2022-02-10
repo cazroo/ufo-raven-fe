@@ -75,7 +75,7 @@ export default function Maap() {
       <h2>
         Favourite Spots{" "}
         <span role="img" aria-label="tent">
-        🛸
+          🛸
         </span>
       </h2>
 
@@ -118,10 +118,9 @@ export default function Maap() {
             <div>
               <h3>
                 <span role="img" aria-label="bear">
-                🛸
+                  🛸
                 </span>{" "}
-                Favourite
-                Spot
+                Favourite Spot
               </h3>
               <p>added {formatRelative(selected.time, new Date())}</p>
             </div>
@@ -151,7 +150,7 @@ const Locate = ({ panTo }) => {
       <img src="/compass.svg" alt="compass" />
     </button>
   );
-}
+};
 
 const Search = ({ panTo }) => {
   const {
@@ -206,4 +205,4 @@ const Search = ({ panTo }) => {
       </Combobox>
     </div>
   );
-}
+};
