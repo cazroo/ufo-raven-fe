@@ -64,7 +64,6 @@ button:hover {
 .wrapper {
   background-color: rgba(181, 181, 181, 0.103);
   box-shadow: 0 0 5px 5px rgba(181, 181, 181, 0.103);
-
   border-top: 10px;
   border-bottom: 10px;
   width: 100%;
@@ -113,13 +112,14 @@ button:hover {
   justify-content: center;
 }
 
-.wapper {
+/* .wapper {
   width: 100%;
   background-color: rgb(var(--global-tertiary-colour));
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
+  height: 100%;
+} */
 
 .DescriptionBoxElements {
   background-color: rgba(255, 127, 80, 0);

@@ -8,7 +8,7 @@ import { LoginModal } from "./components/modal";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Report from "./components/report";
-
+import Footer from "./components/footer";
 function App() {
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -30,6 +30,8 @@ function App() {
           <Route path="/locations" element={<Locations />} />
           <Route path="/report" element={<Report user={user} />} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </div>
   );
