@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import PaginationTable from "./Table components/PaginationTable";
 import "./css/report.css";
 
-function Report( {user} ) {
+function Report({ user }) {
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
 
-  const [newReports, setNewReports] = useState([]);
+  // const [newReports, setNewReports] = useState([]);
   const [cells, setCells] = useState([]);
 
   const handleDate = (e) => setDate(e.target.value);
@@ -21,14 +21,12 @@ function Report( {user} ) {
       date: date,
       name: location,
       description: description,
-      userId: user.id
+      userId: user.id,
     });
-   
-    
-  
-    let copy = [...newReports];
-    copy.push(payload);
-    setNewReports(copy);
+
+    // let copy = [...newReports];
+    // copy.push(payload);
+    // setNewReports(copy);
 
     const res = await fetch(`${process.env.REACT_APP_BASE_URL}/location`, {
       method: "POST",
@@ -42,17 +40,25 @@ function Report( {user} ) {
     getData();
   };
 
-
   const getData = async () => {
-    const reportRes = await fetch(`${process.env.REACT_APP_BASE_URL}/user/${user.id}`, {
-      mode: "cors",
-      method: "GET",
-    });
+    const reportRes = await fetch(
+      `${process.env.REACT_APP_BASE_URL}/user/${user.id}`,
+      {
+        mode: "cors",
+        method: "GET",
+      }
+    );
 
     const data = await reportRes.json();
-    console.log(data[0].reports)
+    console.log(data[0].reports);
     setCells(data[0].reports);
   };
+
+  // const removeHandler = (index) => {
+  //   const newArray = [...cells];
+  //   newArray.splice(row.index, 1);
+  //   setCells(newArray);
+  // };
 
   const columns = React.useMemo(
     () => [
@@ -68,26 +74,56 @@ function Report( {user} ) {
         Header: "Description",
         accessor: "description",
       },
+      {
+        Header: "Button",
+        id: "delete",
+        accessor: (str) => "delete",
+
+        Cell: (tableProps) => (
+          <span
+            style={{
+              cursor: "pointer",
+              color: "blue",
+              textDecoration: "underline",
+            }}
+            onClick={() => {
+              const dataCopy = [...cells];
+              dataCopy.splice(tableProps.row.index, 1);
+              setCells(dataCopy);
+              let difference = cells.filter((x) => !dataCopy.includes(x));
+              const Deleteid = async () => {
+                const reportDel = fetch(
+                  `${process.env.REACT_APP_BASE_URL}/report/${difference[0].id}`,
+                  {
+                    mode: "cors",
+                    method: "DELETE",
+                  }
+                );
+                console.log(reportDel);
+              };
+              Deleteid();
+            }}
+          >
+            Delete
+          </span>
+        ),
+      },
     ],
-    []
+    [cells]
   );
 
   const data = React.useMemo(() => cells, [cells]);
 
   useEffect(() => {
-    getData(user);
-  });
- 
-
-  
+    getData();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-
     // <>{!user || user ? "" :
     <div className="App">
       <div className="report">
         <h1>Report Management</h1>
-        <p className="report">{newReports}</p>
+        {/* <p className="report">{newReports}</p> */}
         <form onSubmit={submitForm}>
           <label htmlFor="date" className="form">
             Date:{" "}
@@ -127,7 +163,6 @@ function Report( {user} ) {
             type="submit"
             value="Add report"
             className="submitbtn"
-  
           ></input>
         </form>
         <table>
@@ -136,14 +171,12 @@ function Report( {user} ) {
               <div>
                 {cells && <PaginationTable columns={columns} data={data} />}
               </div>
-              ;
             </td>
           </tbody>
         </table>
       </div>
     </div>
     // }</>
-
   );
 }
 
