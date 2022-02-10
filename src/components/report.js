@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // // import React from "react";
-import PaginationTable from "./Table components/PaginationTable";
+import PaginationTable from "./TableComponents/PaginationTable";
 import "./css/report.css";
 
 function Report({ user }) {
@@ -115,8 +115,9 @@ function Report({ user }) {
   const data = React.useMemo(() => cells, [cells]);
 
   useEffect(() => {
-    getData();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    getData(user);
+  });
+ 
 
   return (
     // <>{!user || user ? "" :
