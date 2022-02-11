@@ -3,31 +3,37 @@
     position: absolute;
     align-items: center;
     text-align: left;
-    padding-top: 10rem;
-    padding-left: 40rem;
-    font-size: 110px;
+    padding-top: 6rem;
+    padding-left: 30rem;
+    font-size: 70px;
+    margin-left: -15rem;
+    z-index: 1;
 }
 
 .animation {
     position: absolute;
-    padding-left: 80rem;
-    padding-top: 10rem;
+    padding-left: 37rem;
+    padding-top: 6rem;
     padding-bottom: 0;
     padding-right: 0;
-    height: 45rem;
+    height: 40rem;
 }
 
 .text1 {
-    padding-top: 30rem;
-    font-size: 30px;
-    padding-left: 15rem;
+    padding-top: 25rem;
+    font-size: 25px;
+    padding-left: 23rem;
+    width: 70rem;
+    z-index: 1;
+    color: #735aeb;
 
 }
 
 .text2 {
-    padding-top: 35rem;
-    font-size: 30px;
+    padding-top: 1rem;
+    font-size: 25px;
     font-style: italic;
-    padding-left: 20rem;
+    padding-left: 28rem;
     color: #f65846;
+    z-index: -1;
 }

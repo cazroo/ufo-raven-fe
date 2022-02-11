@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import "./css/navBar.css";
+import "../components/css/navBar.css";
 
-export const Footer = () => {
+const Footer = () => {
   return (
-    <div id="footbar">
+    <div className="foot">
       <li id="navBarList">
         <div id="navContent">
           <Link to="/">
-            <button className="navButton"></button>
+            
           </Link>
         </div>
       </li>

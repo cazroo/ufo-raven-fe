@@ -11,9 +11,7 @@ export const Home = () => {
                 </div>
                 <div>
                     <h2 className="text1">is it a bird? is it a plane?</h2>
-                </div>
-                <div>
-                  <h2 className="text2">or is it something else...</h2>
+                    <h2 className="text2">or is it something else...</h2>
                 </div>
               </div>
           </div>

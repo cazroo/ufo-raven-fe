@@ -8,21 +8,25 @@ export const Locations = () => {
     <div className="locationWrapper">
       <div className="boxOne">
         <div>
-          <h1 className="locationTitle">Locations</h1>
           <div id="p1">
             <p>Do you have a favourite place or location for UFO spotting? </p>{" "}
           </div>
-          <p>Feel free to share by clicking onto the map!</p>{" "}
-          <div id="p1cursive"></div>
-          <p>
+          <br />
+          <br />
+
+          <div id="p1cursive">
             {" "}
-            Or check out the table{" "}
-            <span class="inlineLink" onClick={() => navigation("/events")}>
+            <p>Feel free to share by clicking onto the map!</p>{" "}
+            <p>
               {" "}
-              here{" "}
-            </span>
-            to see archived reports and user reports.{" "}
-          </p>
+              Or check out the table{" "}
+              <span class="inlineLink" onClick={() => navigation("/events")}>
+                {" "}
+                here{" "}
+              </span>
+              to see archived reports and user reports.{" "}
+            </p>
+          </div>
         </div>
         <div className="mapMap">
           <Maap />
