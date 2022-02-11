@@ -23,13 +23,11 @@ const proprietes = {
   transitionDuration: 500,
   infinite: true,
   indicators: true,
-  // arrows: true
 };
 
 const Dates = () => {
   return (
     <div>
-      <h1 className=""></h1>
     <div className="container-slide">
       <Fade {...proprietes}> 
         <div className="each-slide">
