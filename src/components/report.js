@@ -63,16 +63,17 @@ function Report({ user }) {
         accessor: "description",
       },
       {
-        Header: "Button",
+        Header: "",
         id: "delete",
         accessor: (str) => "delete",
 
         Cell: (tableProps) => (
           <span
             style={{
+              color: "#fff",
+              textShadow:
+                "2px 0 0 #000, 0 0px 0 #000, 0 2px 0 #000, -1px 0 0 #000",
               cursor: "pointer",
-              color: "rgb(139, 45, 45)",
-              textDecoration: "underline",
             }}
             onClick={() => {
               const dataCopy = [...cells];
@@ -92,7 +93,7 @@ function Report({ user }) {
               Deleteid();
             }}
           >
-            Delete
+            DELETE
           </span>
         ),
       },
@@ -105,11 +106,10 @@ function Report({ user }) {
   useEffect(() => {
     getData(user);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
- 
 
   return (
     // <>{!user || user ? "" :
-    <div className="wrapper">  
+    <div className="wrapper">
       <div className="pageTitle report_table">
         <h1 className="report_title">Create your own report</h1>
         <form onSubmit={submitForm} className="report_form">
@@ -138,18 +138,19 @@ function Report({ user }) {
           <label htmlFor="description" className="form report_text">
             Description:{" "}
           </label>
-          <input
-            type="text"
+          <textarea
+            placeholder="Enter a description"
             name="description"
             value={description}
+            cols="40"
+            rows="5"
             onChange={handleDescription}
             required={true}
-            placeholder="Enter a description"
-          ></input>
+          ></textarea>
           <input
             style={{ marginBottom: "4rem" }}
             type="submit"
-            value="Add report"
+            value="ADD REPORT"
             className="submitbtn report_button"
           ></input>
         </form>

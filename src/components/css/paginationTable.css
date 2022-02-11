@@ -1,27 +1,63 @@
-/* @tailwind base;
+/* /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
 
-tbody tr:nth-child(odd) {
-  background-color: #d7d7d78c;
+.tbody tr:nth-child(odd) {
+  background-color: #d7d7d775;
+  height: 38px;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #a2a2a2ba;
+.tbody tr:nth-child(even) {
+  background-color: #a2a2a270;
+  height: 38px;
 }
 
-table {
+.table {
   background-color: rgba(var(--global-secondary-colour), 0.4);
+  width: 100%;
 }
 
-.pagination_button {
+.tableDivp {
+  margin-top: 20px;
+  width: 200px;
+}
+
+.EventPageButtonp {
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 0px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   padding: 5px;
-  margin: 10px 10px;
-  font-size: 1.2rem;
-  background-color: rgba(240, 248, 255, 0);
+  margin: -2px 2px 10px;
+  font-size: 1.1rem;
+  background-color: transparent;
 }
 
-.pagination_button:hover {
-  color: black;
-  background-color: rgba(240, 248, 255, 0);
+.EventPageButtonp:hover {
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 0px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  background-color: transparent;
+}
+
+/* column headers divide / only way i could manipulate this i found  */
+.thp {
+  padding-left: 7px;
+  padding-right: 70px;
+}
+
+.pageTitlep {
+  margin-top: -60px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.locationTitlep {
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.td {
+  padding-left: 5px;
+  padding-right: 5px;
 }
