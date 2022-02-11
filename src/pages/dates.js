@@ -28,8 +28,10 @@ const proprietes = {
 
 const Dates = () => {
   return (
+    <div>
+      <h1 className=""></h1>
     <div className="container-slide">
-      <Fade {...proprietes}>
+      <Fade {...proprietes}> 
         <div className="each-slide">
           <div>
             <img src={fadeImages[0]} alt="img1" />
@@ -91,6 +93,7 @@ const Dates = () => {
           </div>
         </div>
       </Fade>
+    </div>
     </div>
   );
 };

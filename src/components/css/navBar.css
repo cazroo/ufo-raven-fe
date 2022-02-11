@@ -31,18 +31,24 @@
 }
 
 .logo {
-  font-size: 30px;
-  background-color: rgba(var(--global-primary-colour), 0.4);
+    position: relative;
+    width: 12rem;
+    z-index:1;
+    height:10.5rem;
+    padding-top: 2rem;
+    padding-left: 3rem;
+
 }
 
 .nav-links {
   display: flex;
-  justify-content: space-between;
-  margin-left: 135px;
-  margin-right: 40px;
+  justify-content:space-between;
+  margin-left: 10px;
+  margin-right: 30px;
   width: 90%;
   height: 60%;
 }
+
 
 .navButton {
   background-color: rgba(255, 192, 203, 0);
