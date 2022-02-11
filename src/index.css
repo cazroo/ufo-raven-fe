@@ -1,14 +1,3 @@
-/* dons thin one, not rdy yet, be placed in navbar if we wanna use it*/
-/* .navbar {
-  margin-top: 9px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 10px;
-  background-color: rgba(var(--global-primary-colour));
-}
-*/
-
 .locationWrapper {
   display: flex;
   flex-direction: column;

@@ -3,12 +3,12 @@
 @tailwind utilities; */
 
 tbody tr:nth-child(odd) {
-  background-color: #d7d7d775;
+  border: solid 2px rgb(74, 255, 222);
   height: 38px;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #a2a2a270;
+  background-color: #f2f2f270;
   height: 38px;
 }
 
