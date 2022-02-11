@@ -1,14 +1,12 @@
 import React from "react";
-import "../css/EventPageTable.css";
+import "../css/paginationTable.css";
 
 import {
   useTable,
   useSortBy,
   useColumnOrder,
-  useGlobalFilter,
   usePagination,
 } from "react-table";
-import { GlobalFilter } from "./GlobalFilter";
 
 export default function PagiationTable({ columns, data }) {
   // Use the useTable Hook to send the columns and data to build the table
@@ -25,40 +23,32 @@ export default function PagiationTable({ columns, data }) {
     pageCount,
     prepareRow, // Prepare the row (this function needs to be called for each row before getting the row props)
     state,
-    setGlobalFilter, // function to set global filter text value
   } = useTable(
     {
       columns,
       data,
       initialState: { pageSize: 3 }, // number of objects displayed
     },
-    useGlobalFilter,
     useSortBy,
     usePagination,
     useColumnOrder
   );
 
-  //   const changeOrder = () => {
-  //     setColumnOrder(["date", "location.name", "description"]);
-  //   };
-
   const { globalFilter } = state;
 
   return (
     <>
-      {/* <button onClick={changeOrder}>Change Column Order</button> */}
-      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <div>
         <div>
           <div>
             <div>
-              <table {...getTableProps()}>
+              <table className="table"{...getTableProps()}>
                 <thead>
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map((column) => (
                         <th
-                          className="th"
+                          className="thp"
                           scope="col"
                           {...column.getHeaderProps(
                             column.getSortByToggleProps
@@ -77,14 +67,14 @@ export default function PagiationTable({ columns, data }) {
                     </tr>
                   ))}
                 </thead>
-                <tbody {...getTableBodyProps()}>
+                <tbody className="tbody"{...getTableBodyProps()}>
                   {page.map((row, i) => {
                     prepareRow(row);
                     return (
                       <tr {...row.getRowProps()}>
                         {row.cells.map((cell) => {
                           return (
-                            <td {...cell.getCellProps()}>
+                            <td className="td"{...cell.getCellProps()}>
                               {cell.render("Cell")}
                             </td>
                           );
@@ -95,12 +85,12 @@ export default function PagiationTable({ columns, data }) {
                 </tbody>
               </table>
               <button
-                className="EventPageButton"
+                className="EventPageButtonp"
                 onClick={() => previousPage()}
                 disabled={!canPreviousPage}
               >
                 <button
-                  className="EventPageButton"
+                  className="EventPageButtonp"
                   onClick={() => gotoPage(0)}
                   disabled={!canPreviousPage}
                 >
@@ -109,14 +99,14 @@ export default function PagiationTable({ columns, data }) {
                 Back{" "}
               </button>
               <button
-                className="EventPageButton"
+                className="EventPageButtonp"
                 onClick={() => nextPage()}
                 disabled={!canNextPage}
               >
                 Next{" "}
               </button>
               <button
-                className="EventPageButton"
+                className="EventPageButtonp"
                 onClick={() => gotoPage(pageCount - 1)}
                 disabled={!canNextPage}
               >
