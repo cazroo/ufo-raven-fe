@@ -15,16 +15,16 @@
   background-color: rgb(33, 171, 145);
 }
 
-.nav {
+ .nav {
   height: 10px;
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   z-index: 1;
   margin: 0;
   padding: 0;
   width: 100%;
-}
+}  
 
 #pageBuffer {
   height: 90px;
@@ -38,7 +38,7 @@
     padding-top: 2rem;
     padding-left: 3rem;
 
-}
+} 
 
 .nav-links {
   display: flex;
@@ -66,18 +66,20 @@
   transition: all 0.1s ease-in-out;
   text-shadow: 1px 0 0 #000, 0 0px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   transform: scale(1.1);
-  /* color: #e4c55e; */
+}
+  /* color: #e4c55e; */ 
 
-  /* border: solid 2px rgb(var(--global-tertiary-colour));
+  /* /* border: solid 2px rgb(var(--global-tertiary-colour));
   background-color: rgba(var(--global-secondary-colour), 0.4);
   color: rgb(var(--global-tertiary-colour)); */
   /* text-decoration: underline; */
-}
+
 
 /* ~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~ */
 
-#footbar {
-  position: fixed;
+/* .foot {
+  text-decoration: none;
+  position: fixed; 
   z-index: 1;
   align-items: center;
   display: flex;
@@ -89,5 +91,11 @@
   border: transparent;
   margin-top: 100%;
   list-style: none;
-  bottom: 1px;
-}
+  bottom: 1px; 
+
+} */
+
+/* #navBarList {
+  margin-top: 10%;
+  background-color: rgba(34, 181, 159, 0.673);
+} */
