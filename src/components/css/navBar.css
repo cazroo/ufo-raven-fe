@@ -51,7 +51,7 @@
   border: solid 2px rgba(0, 255, 208, 0);
   padding: 0px 10px 0px 10px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #fff;
   text-shadow: 1px 0 0 #000, 0 0px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
@@ -75,7 +75,7 @@
   z-index: 1;
   align-items: center;
   display: flex;
-  background-color: rgba(0, 255, 208, 0.536);
+  background-color: rgba(34, 181, 159, 0.673);
   font-family: "Montserrat", sans-serif;
   word-wrap: normal;
   width: 100%;
