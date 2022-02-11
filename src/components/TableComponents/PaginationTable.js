@@ -34,7 +34,6 @@ export default function PagiationTable({ columns, data }) {
     useColumnOrder
   );
 
-  const { globalFilter } = state;
 
   return (
     <>
