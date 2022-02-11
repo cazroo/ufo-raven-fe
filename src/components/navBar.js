@@ -15,15 +15,17 @@ export const NavBar = (props) => {
       <div id="pageBuffer" />
       <nav>
         <div className="navbar">
+            <Link to="/">
+            <img className="logo" src="./logoFinal.png" alt="logo"/>
+            </Link>
           <li className="nav-links">
             <div>
-              <Link to="/">
-                {/* <image src={requestAnimationFrame('../../Images/logo.svg')} /> */}
-              </Link>
               <Link to="/events">
                 <button className="navButton"> EVENTS </button>
               </Link>
-              <Link to="/footage">
+             
+                <Link to="/footage">
+
                 <button className="navButton"> FOOTAGE </button>
               </Link>
               <Link to="/locations">

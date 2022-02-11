@@ -1,0 +1,33 @@
+.welcomeText {
+    color: aliceblue;
+    position: absolute;
+    align-items: center;
+    text-align: left;
+    padding-top: 10rem;
+    padding-left: 40rem;
+    font-size: 110px;
+}
+
+.animation {
+    position: absolute;
+    padding-left: 80rem;
+    padding-top: 10rem;
+    padding-bottom: 0;
+    padding-right: 0;
+    height: 45rem;
+}
+
+.text1 {
+    padding-top: 30rem;
+    font-size: 30px;
+    padding-left: 15rem;
+
+}
+
+.text2 {
+    padding-top: 35rem;
+    font-size: 30px;
+    font-style: italic;
+    padding-left: 20rem;
+    color: #f65846;
+}
