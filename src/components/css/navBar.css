@@ -5,19 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* 
 
-/* .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index:1;
-    margin:0;
-    padding:0;
-    width: 100%;
-}  */
-
-/* dons thin one, not rdy yet, be placed in navbar if we wanna use it*/
 .navbar {
   margin-top: -50px;
   display: flex;
@@ -25,11 +13,21 @@
   align-items: center;
   height: 10px;
   background-color: rgb(33, 171, 145);
-  /* background-color: rgba(var(--global-primary-colour)); */
+}
+
+.nav {
+  height: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 #pageBuffer {
-  height: 100px;
+  height: 90px;
 }
 
 .logo {
