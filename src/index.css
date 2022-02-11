@@ -77,10 +77,10 @@
 
 h2 {
   position: absolute;
-  font-size: 1rem;
+  font-size: 2rem;
   top: 197px;
-  left: 550px;
-  color: #ffffff;
+  left: 650px;
+  color: darkslategrey;
   z-index: 10;
   margin: 0;
   padding: 0;
@@ -99,7 +99,7 @@ h2 {
 .search {
   position: absolute;
   top: 200px;
-  left: 1500px;
+  left: 1150px;
   transform: translateX(-50%);
   width: 50%;
   max-width: 300px;
@@ -116,7 +116,7 @@ h2 {
 .locate {
   position: absolute;
   top: 13rem;
-  right: 16rem;
+  right: 49rem;
   background: none;
   border: none;
   z-index: 1;
@@ -129,7 +129,7 @@ h2 {
 #map {
   position: absolute;
   top: 180px;
-  left: 1200px;
+  left: 700px;
 }
 
 html {
