@@ -23,7 +23,9 @@ export const NavBar = (props) => {
               <Link to="/events">
                 <button className="navButton"> EVENTS </button>
               </Link>
-              <Link to="/dates">
+             
+                <Link to="/footage">
+
                 <button className="navButton"> FOOTAGE </button>
               </Link>
               <Link to="/locations">

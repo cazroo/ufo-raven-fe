@@ -62,13 +62,12 @@
 
 .inlineLink {
   font-style: italic;
-  color: #79bdd0;
+  color: #fc6466;
 }
 
 .inlineLink:hover {
   font-style: italic;
   text-decoration: underline;
-  color: #bbb280;
 }
 
 /* .wrapper {

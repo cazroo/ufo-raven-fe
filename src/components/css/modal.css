@@ -16,6 +16,12 @@ label {
   width: 300px;
 }
 
+.react-responsive-modal-modal {
+  background: #ffffff9f;;
+  padding: 20px;
+  margin-top: 10px;
+}
+
 .react-responsive-modal-closeButton {
   display: flex;
   align-items: center;
