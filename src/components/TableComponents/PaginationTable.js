@@ -22,7 +22,6 @@ export default function PagiationTable({ columns, data }) {
     gotoPage,
     pageCount,
     prepareRow, // Prepare the row (this function needs to be called for each row before getting the row props)
-    state,
   } = useTable(
     {
       columns,
