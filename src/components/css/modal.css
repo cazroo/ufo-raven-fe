@@ -28,6 +28,6 @@ label {
 }
 
 .react-responsive-modal-closeButton:hover {
-  color: rgba(83, 203, 192, 1);
   transform: scale(1.1);
+  border-style: solid;
 }
