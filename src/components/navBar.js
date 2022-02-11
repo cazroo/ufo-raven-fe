@@ -31,7 +31,7 @@ export const NavBar = (props) => {
               </Link>
             </div>
 
-            {props.user ? console.log(props.user.username) : null}
+            {props.user ? null : null}
             {props.user ? (
               <div>
                 <Link to="/report">
