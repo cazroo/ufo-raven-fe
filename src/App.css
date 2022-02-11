@@ -46,8 +46,9 @@ button:hover {
 }
 
 .submitbtn:hover {
-  background-color: rgb(var(--global-primary-colour));
-  color: rgb(var(--global-tertiary-colour));
+  border: solid 1px black;
+  background-color: rgba(207, 207, 207, 0.788);
+  color: black;
 }
 
 .pageTitle {
